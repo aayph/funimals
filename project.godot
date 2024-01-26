@@ -14,3 +14,7 @@ config/name="Funimals"
 run/main_scene="res://levels/level1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Gamestate="*res://gamestate.gd"
