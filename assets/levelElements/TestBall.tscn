@@ -1,18 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://b74gfdsfai4sa"]
 
 [ext_resource type="PackedScene" uid="uid://cutaia2ferlq7" path="res://assets/characters/meeple.glb" id="1_bnq1y"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fhxy4"]
+[ext_resource type="PhysicsMaterial" uid="uid://dtmv5l631a08u" path="res://assets/levelElements/NoFriction.tres" id="1_r1en1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6edgv"]
 
-[node name="TestBall" type="Node3D"]
+[node name="TestBall" type="RigidBody3D"]
+physics_material_override = ExtResource("1_r1en1")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_fhxy4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_6edgv")
 
-[node name="meeple2" parent="RigidBody3D" instance=ExtResource("1_bnq1y")]
+[node name="meeple2" parent="." instance=ExtResource("1_bnq1y")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmv2qgx5we56s"]
+
+[ext_resource type="Script" path="res://assets/gameplay/FloorSpawner.gd" id="1_awq5d"]
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="1_n714w"]
+
+[node name="FloorSpawner" type="Node3D"]
+script = ExtResource("1_awq5d")
+
+[node name="portal2" parent="." instance=ExtResource("1_n714w")]
