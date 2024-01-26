@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dykf5xbcmwrx7"]
+
+[ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
+[ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_ac7km"]
+[ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_486vs")]
+
+[node name="TestBall" parent="." instance=ExtResource("2_ac7km")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 20, 40)
+
+[node name="East Wall" parent="." instance=ExtResource("3_01o2t")]
+transform = Transform3D(-1.74846e-07, 0, -1, 0, 1, 0, 4, 0, -4.37114e-08, 20, 0, 0)
+
+[node name="West Wall" parent="." instance=ExtResource("3_01o2t")]
+transform = Transform3D(-1.74846e-07, 0, 1, 0, 1, 0, -4, 0, -4.37114e-08, -20, 0, 0)
+
+[node name="North Wall" parent="." instance=ExtResource("3_01o2t")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="South Wall" parent="." instance=ExtResource("3_01o2t")]
+transform = Transform3D(-4, 0, -8.74228e-08, 0, 1, 0, 3.49691e-07, 0, -1, 0, 0, 20)

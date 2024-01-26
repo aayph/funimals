@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jmm6hwopybk"]
+
+[ext_resource type="PackedScene" uid="uid://dn3hm874mi2bl" path="res://assets/levelElements/wall.glb" id="1_0ek4c"]
+[ext_resource type="Shape3D" uid="uid://d16n54smjcnia" path="res://assets/levelElements/WallCollider.tres" id="2_250c7"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="wall" parent="StaticBody3D" instance=ExtResource("1_0ek4c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.5)
+shape = ExtResource("2_250c7")
