@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cclb3e1rt1cr3"]
+
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_0agyy"]
+
+[node name="CameraRoot" type="Node3D" node_paths=PackedStringArray("child_axis")]
+script = ExtResource("1_0agyy")
+child_axis = NodePath("")
+min_pos = Vector3(-18, 0, -18)
+max_pos = Vector3(18, 0, 18)
+camera_speed = 15.0
+rotate_speed = 2.0
+sensitivity = 0.4
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="Camera" type="Camera3D" parent="Node3D/Node3D"]
+current = true
+fov = 60.0

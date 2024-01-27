@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/gameplay/BasicSpawner.gd" id="1_3c2fn"]
 [ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_8pdsn"]
-[ext_resource type="PackedScene" uid="uid://1bmepy3ba23v" path="res://assets/gameplay/portal_visual.tscn" id="3_ek4ay"]
+[ext_resource type="PackedScene" path="res://assets/gameplay/portal_visual.tscn" id="3_ek4ay"]
 
 [node name="BasicSpawner" type="Node3D"]
 script = ExtResource("1_3c2fn")
