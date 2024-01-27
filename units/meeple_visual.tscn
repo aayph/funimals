@@ -8,8 +8,9 @@
 render_priority = 0
 shader = ExtResource("3_dkldu")
 
-[node name="meeple2" instance=ExtResource("1_m21t8")]
+[node name="meeple2" node_paths=PackedStringArray("mesh") instance=ExtResource("1_m21t8")]
 script = ExtResource("2_2pnj7")
+mesh = NodePath("meeple")
 
 [node name="meeple" parent="." index="0"]
 instance_shader_parameters/Happiness = 0.0

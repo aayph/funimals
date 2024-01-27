@@ -12,8 +12,13 @@ var wanted_direction: Vector3
 
 
 func change_happiness(happiness_change: float) -> float:
+	var old_happiness := happiness
 	happiness += happiness_change
 	happiness = clamp(happiness, -1.0, 1.0)
+	for c in get_children():
+		if c.has_method("set_happiness"):
+			c.set_happiness(happiness)
+	Gamestate.meeple_happiness_changed.emit(self, happiness-old_happiness)
 	return happiness
 
 func _ready() -> void:

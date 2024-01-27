@@ -10,8 +10,8 @@
 [node name="Meeple" type="CharacterBody3D" node_paths=PackedStringArray("area")]
 script = ExtResource("1_1eyr5")
 area = NodePath("Area3D")
-direction_update_period_min = 0.5
-direction_update_period_max = 1.2
+direction_update_period_min = 0.7
+direction_update_period_max = 1.6
 
 [node name="Area3D" type="Area3D" parent="."]
 monitorable = false

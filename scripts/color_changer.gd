@@ -1,12 +1,5 @@
 extends Node
+@export var mesh: MeshInstance3D
 
-@export var material: Material
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func set_happiness(new_happiness: float):
+	mesh.set_instance_shader_parameter("Happiness", new_happiness)
