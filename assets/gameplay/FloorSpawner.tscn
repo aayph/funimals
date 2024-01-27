@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmv2qgx5we56s"]
 
 [ext_resource type="Script" path="res://assets/gameplay/FloorSpawner.gd" id="1_awq5d"]
-[ext_resource type="PackedScene" uid="uid://foceet4mav8q" path="res://assets/gameplay/portal.glb" id="1_n714w"]
 [ext_resource type="PackedScene" uid="uid://dmf3ymx3abp0" path="res://pufferfish.tscn" id="2_27is2"]
+[ext_resource type="PackedScene" uid="uid://cbbecxsg7m3t7" path="res://assets/gameplay/portal_visual.tscn" id="3_7cn5j"]
 
 [node name="FloorSpawner" type="Node3D"]
 script = ExtResource("1_awq5d")
 enemy = ExtResource("2_27is2")
 
-[node name="portal2" parent="." instance=ExtResource("1_n714w")]
+[node name="portal3" parent="." instance=ExtResource("3_7cn5j")]
