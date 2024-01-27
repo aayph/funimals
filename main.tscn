@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs7td66pulnym"]
+
+[ext_resource type="PackedScene" uid="uid://bpqj8sd324401" path="res://ui/mainmenu.tscn" id="1_e564k"]
+[ext_resource type="PackedScene" uid="uid://cb6yyboukigia" path="res://ui/HUD.tscn" id="2_io8cf"]
+
+[node name="Main" type="Node"]
+
+[node name="Mainmenu" parent="." instance=ExtResource("1_e564k")]
+
+[node name="Hud" parent="." instance=ExtResource("2_io8cf")]
+visible = false
