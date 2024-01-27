@@ -1,7 +1,9 @@
+class_name SpawnController
 extends Node
 
 const floorCollisionMask: int = 2
 const directionSelectionCollisionMask: int = 4
+var gameState: Gamestate
 var level: Node3D
 var camera: Camera3D
 var directionIndicator: Line2D
@@ -13,9 +15,8 @@ var directionStartPoint: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var gameState = get_node("/root/Gamestate")
+	gameState = get_node("/root/Gamestate")
 	gameState.connect("activateBuildMode", onBuildModeActivated)
-	level = get_node("Level")
 	if (level != null):
 		camera = level.get_node("Camera")
 	directionIndicator = get_node("DirectionIndicator")
@@ -61,6 +62,7 @@ func _input(event):
 						var diff = hitPosition - currentSpawnerPreview.transform.origin
 						direction = Vector2(diff.x, diff.z).normalized()
 					
+					gameState.add_money(-gameState.SpawnerCosts[currentSpawnerFactory.getSpawnerId()])
 					var newSpawner: Spawner = currentSpawnerFactory.createSpawner(direction, level)
 					newSpawner.transform = currentSpawnerPreview.transform
 					level.add_child(newSpawner)

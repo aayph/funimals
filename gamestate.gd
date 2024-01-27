@@ -9,10 +9,14 @@ var Data: LevelData
 var MeepleList: Array[Meeple]
 var _total_happiness: float
 var current_state: StateChange = StateChange.MAIN_MENU
+var SpawnerCosts: Dictionary = {
+	"BasicSpawner": 100
+}
 
 signal money_changed(money_added:float, total_money: float)
 signal meeple_happiness_changed(meeple: Meeple, value: float, affect_money: bool)
 signal change_state(active_scene: StateChange)
+signal activateBuildMode(factory: SpawnerBuilderFactory)
 
 func _ready() -> void:
 	meeple_happiness_changed.connect(_on_meeple_happiness_changed)

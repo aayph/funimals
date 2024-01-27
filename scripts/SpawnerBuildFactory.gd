@@ -17,3 +17,6 @@ func createSpawner(direction: Vector2, spawnRoot: Node3D) -> Spawner:
 	newSpawner.spawnRoot = spawnRoot
 	return newSpawner
 
+func getSpawnerId() -> String:
+	return spawner.get_state().get_node_name(0)
+

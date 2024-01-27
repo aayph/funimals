@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb6yyboukigia"]
+[gd_scene load_steps=3 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
+[ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
 
 [node name="Hud" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -33,5 +34,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT GAME"
+
+[node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
+layout_mode = 2
 
 [connection signal="pressed" from="PanelContainer/ColorRect/Button" to="." method="_on_quit_pressed"]
