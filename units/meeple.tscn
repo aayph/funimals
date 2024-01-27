@@ -1,15 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://s7ktxprbqvns"]
+[gd_scene load_steps=5 format=3 uid="uid://s7ktxprbqvns"]
 
 [ext_resource type="Script" path="res://scripts/meeple.gd" id="1_1eyr5"]
 [ext_resource type="PackedScene" uid="uid://bo8a5al71nr0u" path="res://units/meeple_visual.tscn" id="2_4pycn"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ql3g"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkpat"]
 
-[node name="Meeple" type="CharacterBody3D"]
+[node name="Meeple" type="CharacterBody3D" node_paths=PackedStringArray("area")]
 script = ExtResource("1_1eyr5")
+area = NodePath("Area3D")
+direction_update_period_min = 0.5
+direction_update_period_max = 1.2
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ql3g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.846714, 0)
 shape = SubResource("CapsuleShape3D_fkpat")
 
 [node name="meeple2" parent="." instance=ExtResource("2_4pycn")]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

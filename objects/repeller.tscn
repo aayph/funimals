@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://danavhklaydja"]
+
+[ext_resource type="Script" path="res://objects/repeller.gd" id="1_3tsyu"]
+
+[node name="Repeller" type="Node3D"]
+script = ExtResource("1_3tsyu")
