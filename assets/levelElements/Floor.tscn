@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2tyul4dvvxmp"]
 
-[ext_resource type="PackedScene" uid="uid://dq3wd78v5b4dp" path="res://assets/levelElements/floor.glb" id="1_bxg4b"]
+[ext_resource type="PackedScene" uid="uid://u8cah6lu72nc" path="res://assets/levelElements/floor.glb" id="1_bxg4b"]
 [ext_resource type="Shape3D" uid="uid://75skj3dl778o" path="res://assets/levelElements/FloorCollider.tres" id="2_s2hxi"]
 
 [node name="Floor" type="Node3D"]
