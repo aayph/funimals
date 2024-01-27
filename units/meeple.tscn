@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://s7ktxprbqvns"]
 
 [ext_resource type="Script" path="res://scripts/meeple.gd" id="1_1eyr5"]
-[ext_resource type="PackedScene" uid="uid://dswlsahlo6m5w" path="res://assets/characters/meeple.glb" id="1_56rtf"]
+[ext_resource type="PackedScene" uid="uid://bo8a5al71nr0u" path="res://units/meeple_visual.tscn" id="2_4pycn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkpat"]
 
 [node name="Meeple" type="CharacterBody3D"]
 script = ExtResource("1_1eyr5")
 
-[node name="Visual" parent="." instance=ExtResource("1_56rtf")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.846714, 0)
 shape = SubResource("CapsuleShape3D_fkpat")
+
+[node name="meeple2" parent="." instance=ExtResource("2_4pycn")]
