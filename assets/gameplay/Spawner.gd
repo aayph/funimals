@@ -20,7 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	spawnTimer += delta
-	
+
 	if (spawnTimer > interval && spawns > 0):
 		spawnTimer -= interval
 		spawns -= 1
@@ -35,6 +35,6 @@ func _process(delta):
 			)
 		)
 		spawnRoot.add_child(enemyInstance)
-	
+
 	if (spawns <= 0):
 		queue_free()
