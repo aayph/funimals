@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://3c0viox614qw"]
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://3c0viox614qw"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2ykh1"]
 expanded_output_ports = [0]
@@ -7,6 +7,7 @@ input_name = "uv"
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_k8a5y"]
 parameter_name = "Texture2DParameter"
 texture_type = 1
+texture_repeat = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_c4ui0"]
 source = 5
@@ -18,24 +19,27 @@ parameter_name = "FloatParameter"
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_88yma"]
 
-[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_twx40"]
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_qo3mm"]
+constant = Color(0, 0.530833, 0.91, 1)
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_fv2dq"]
 parameter_name = "ColorParameter"
 default_value_enabled = true
-default_value = Color(0.0941176, 0.772549, 0.858824, 1)
+default_value = Color(0, 0.529412, 0.909804, 1)
 
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform vec4 ColorParameter : source_color = vec4(0.094118, 0.772549, 0.858824, 1.000000);
+uniform vec4 ColorParameter : source_color = vec4(0.000000, 0.529412, 0.909804, 1.000000);
 uniform float FloatParameter;
-uniform sampler2D Texture2DParameter : source_color;
+uniform sampler2D Texture2DParameter : source_color, repeat_disable;
 
 
 
 void fragment() {
-// ColorParameter:8
-	vec4 n_out8p0 = ColorParameter;
+// ColorParameter:9
+	vec4 n_out9p0 = ColorParameter;
 
 
 // Input:2
@@ -63,13 +67,13 @@ void fragment() {
 
 
 // Output:0
-	ALBEDO = vec3(n_out8p0.xyz);
+	ALBEDO = vec3(n_out9p0.xyz);
 	ALPHA = n_out4p0.x;
 
 
 }
 "
-graph_offset = Vector2(-202.993, -37.3489)
+graph_offset = Vector2(-260.438, -166.022)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_2ykh1")
 nodes/fragment/2/position = Vector2(-760, 100)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_k8a5y")
@@ -79,9 +83,11 @@ nodes/fragment/4/position = Vector2(40, 240)
 nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_4c2rd")
 nodes/fragment/5/position = Vector2(-400, 200)
 nodes/fragment/6/node = SubResource("VisualShaderNodeFloatParameter_y0tkg")
-nodes/fragment/6/position = Vector2(-1000, 160)
+nodes/fragment/6/position = Vector2(-1020, 200)
 nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_88yma")
 nodes/fragment/7/position = Vector2(-220, 100)
-nodes/fragment/8/node = SubResource("VisualShaderNodeColorParameter_twx40")
-nodes/fragment/8/position = Vector2(0, 20)
-nodes/fragment/connections = PackedInt32Array(3, 0, 4, 2, 2, 2, 5, 0, 6, 0, 5, 1, 2, 1, 7, 0, 5, 0, 7, 1, 7, 0, 4, 0, 4, 0, 0, 1, 8, 0, 0, 0)
+nodes/fragment/8/node = SubResource("VisualShaderNodeColorConstant_qo3mm")
+nodes/fragment/8/position = Vector2(-260, -60)
+nodes/fragment/9/node = SubResource("VisualShaderNodeColorParameter_fv2dq")
+nodes/fragment/9/position = Vector2(-20, 20)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 2, 2, 2, 5, 0, 6, 0, 5, 1, 2, 1, 7, 0, 5, 0, 7, 1, 7, 0, 4, 0, 4, 0, 0, 1, 9, 0, 0, 0)
