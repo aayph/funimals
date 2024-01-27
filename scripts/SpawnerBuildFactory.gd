@@ -1,5 +1,5 @@
-class_name SpawnerBuilderFactory
 extends Object
+class_name SpawnerBuilderFactory
 
 var preview: PackedScene
 var spawner: PackedScene

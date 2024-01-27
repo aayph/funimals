@@ -1,5 +1,5 @@
-class_name Spawner
 extends Node3D
+class_name Spawner
 
 @export var direction: Vector2 = Vector2.ZERO
 @export var interval: float = 0
