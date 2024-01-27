@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/gameplay/HamsterSpawner.gd" id="1_p52cv"]
 [ext_resource type="PackedScene" uid="uid://b52e8gcdq6l5f" path="res://hamster.tscn" id="2_hpdog"]
-[ext_resource type="PackedScene" uid="uid://cbbecxsg7m3t7" path="res://assets/gameplay/portal_visual.tscn" id="3_nytop"]
+[ext_resource type="PackedScene" uid="uid://1bmepy3ba23v" path="res://assets/gameplay/portal_visual.tscn" id="3_nytop"]
 
 [node name="HamsterSpawner" type="Node3D"]
 script = ExtResource("1_p52cv")

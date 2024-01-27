@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b47t2jx4i8pnf" path="res://ui/BuildButton.tscn" id="2_1be3d"]
 [ext_resource type="PackedScene" uid="uid://ig3rsxuv8mpf" path="res://assets/gameplay/FloorSpawnerPreview.tscn" id="3_ilh8o"]
-[ext_resource type="PackedScene" uid="uid://dl2avb61g8be0" path="res://assets/gameplay/HamsterSpawner.tscn" id="3_t2tbv"]
-[ext_resource type="PackedScene" uid="uid://dryu01xp38mdk" path="res://assets/gameplay/PufferfishSpawner.tscn" id="4_prihp"]
+[ext_resource type="PackedScene" uid="uid://bhnia2f82vf5o" path="res://assets/gameplay/HamsterSpawner.tscn" id="3_t2tbv"]
+[ext_resource type="PackedScene" uid="uid://b186sgssn3x3x" path="res://assets/gameplay/PufferfishSpawner.tscn" id="4_prihp"]
 
 [node name="BuildMenu" type="PanelContainer"]
 custom_minimum_size = Vector2(800, 100)
