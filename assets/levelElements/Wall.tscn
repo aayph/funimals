@@ -11,6 +11,7 @@ disable_mode = 1
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+freeze = true
 
 [node name="wall" parent="StaticBody3D" instance=ExtResource("1_0ek4c")]
 
