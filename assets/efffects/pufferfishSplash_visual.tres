@@ -15,7 +15,9 @@ source = 5
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_4c2rd"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_y0tkg"]
+output_port_for_preview = 0
 parameter_name = "FloatParameter"
+default_value = 7.0
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_88yma"]
 
@@ -68,7 +70,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-701.046, 76.778)
+graph_offset = Vector2(-440.803, 59.2675)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_2ykh1")
 nodes/fragment/2/position = Vector2(-760, 100)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_k8a5y")
@@ -78,7 +80,7 @@ nodes/fragment/4/position = Vector2(40, 240)
 nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_4c2rd")
 nodes/fragment/5/position = Vector2(-400, 200)
 nodes/fragment/6/node = SubResource("VisualShaderNodeFloatParameter_y0tkg")
-nodes/fragment/6/position = Vector2(-820, 240)
+nodes/fragment/6/position = Vector2(-1000, 160)
 nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_88yma")
 nodes/fragment/7/position = Vector2(-220, 100)
 nodes/fragment/8/node = SubResource("VisualShaderNodeColorParameter_twx40")
