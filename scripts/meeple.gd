@@ -6,6 +6,8 @@ class_name Meeple
 @export var direction_update_period_max: float = 2.0
 @export var reduction_per_second: float = 1.0/60.0
 @export var base_happiness:float = 0.5
+@export var speed:float = 4.0
+
 var happiness: float
 var timer: float
 
@@ -55,7 +57,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	velocity = forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2
+	velocity = (forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2) * speed
 	move_and_slide()
 
 func get_forced_direction(objects: Array[Node3D]) -> Vector3:
