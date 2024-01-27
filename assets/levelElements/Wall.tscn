@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7jmm6hwopybk"]
+[gd_scene load_steps=4 format=3 uid="uid://d2uoipc5vrrmi"]
 
 [ext_resource type="PackedScene" uid="uid://dn3hm874mi2bl" path="res://assets/levelElements/wall.glb" id="1_0ek4c"]
 [ext_resource type="Shape3D" uid="uid://d16n54smjcnia" path="res://assets/levelElements/WallCollider.tres" id="2_250c7"]

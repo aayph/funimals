@@ -12,6 +12,7 @@ var timer: float
 var forced_direction: Vector3
 var wanted_direction: Vector3
 
+var is_meeple = true
 
 func change_happiness(happiness_change: float, affect_money: bool = true) -> float:
 	var old_happiness := happiness
@@ -24,6 +25,15 @@ func change_happiness(happiness_change: float, affect_money: bool = true) -> flo
 	return happiness
 
 func _ready() -> void:
+	Gamestate.change_state.connect(_on_state_change)
+
+func _on_state_change(new_state: Gamestate.StateChange):
+	match new_state:
+		Gamestate.StateChange.LEVEL_START:
+			Gamestate.register_meeple(self)
+			init()
+
+func init():
 	change_happiness(base_happiness, false)
 	timer = randf_range(direction_update_period_min, direction_update_period_max)
 	var close_objects := area.get_overlapping_bodies()
