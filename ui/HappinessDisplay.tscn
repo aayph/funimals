@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb34itqux33u1"]
+
+[ext_resource type="Script" path="res://ui/HappinessDisplay.gd" id="1_3eebq"]
+
+[node name="HappinessDisplay" type="Label"]
+script = ExtResource("1_3eebq")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb6yyboukigia"]
+[gd_scene load_steps=5 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
 [ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
+[ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
 
 [node name="Hud" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -40,7 +41,7 @@ text = "QUIT GAME"
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="PanelContainer2" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -50,10 +51,26 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="MoneyDisplay" parent="PanelContainer2" instance=ExtResource("2_qlw6x")]
+[node name="MoneyDisplay" parent="MarginContainer" instance=ExtResource("2_qlw6x")]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "0 Meeps"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HappinessDisplay" parent="MarginContainer2" instance=ExtResource("4_tq2cl")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0 Meepiness"
 
 [connection signal="pressed" from="PanelContainer/ColorRect/Button" to="." method="_on_quit_pressed"]

@@ -16,6 +16,7 @@ var SpawnerCosts: Dictionary = {
 }
 
 signal money_changed(money_added:float, total_money: float)
+signal total_happiness_changed(total_happiness:float)
 signal meeple_happiness_changed(meeple: Meeple, value: float, affect_money: bool)
 signal change_state(active_scene: StateChange)
 signal activateBuildMode(factory: SpawnerBuilderFactory)
@@ -40,6 +41,7 @@ func _on_meeple_happiness_changed(meeple: Meeple, value: float, affect_money: bo
 	if affect_money and value > 0.0:
 		add_money(value * MoneyPerHappiness)
 	_total_happiness += value
+	total_happiness_changed.emit(_total_happiness)
 	if _total_happiness / MeepleList.size() > Data.WinValue:
 		win_level()
 	elif _total_happiness / MeepleList.size() < Data.DeathValue:
@@ -49,6 +51,7 @@ func _start_level(data: LevelData):
 	Data = data
 	MeepleList.clear()
 	_total_happiness = 0.0
+	total_happiness_changed.emit(_total_happiness)
 	set_money(data.StartingMoney)
 	change_state.emit(StateChange.LEVEL_START)
 
@@ -66,3 +69,4 @@ func return_mainmenu():
 func register_meeple(meeple: Meeple):
 	MeepleList.append(meeple)
 	_total_happiness += meeple.happiness
+	total_happiness_changed.emit(_total_happiness)
