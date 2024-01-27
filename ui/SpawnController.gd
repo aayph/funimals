@@ -1,5 +1,5 @@
-class_name SpawnController
 extends Node
+class_name SpawnController
 
 const floorCollisionMask: int = 2
 const directionSelectionCollisionMask: int = 4
