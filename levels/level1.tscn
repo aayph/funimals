@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dykf5xbcmwrx7"]
+[gd_scene load_steps=6 format=3 uid="uid://dykf5xbcmwrx7"]
 
 [ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
 [ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_ac7km"]
@@ -26,8 +26,6 @@ transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
 [node name="South Wall" parent="." instance=ExtResource("3_01o2t")]
 transform = Transform3D(-4, 0, -8.74228e-08, 0, 1, 0, 3.49691e-07, 0, -1, 0, 0, 20)
 
-[node name="Meeple" parent="." instance=ExtResource("4_1funl")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
 
@@ -54,4 +52,3 @@ interval = 3.0
 spawns = 3
 enemy = ExtResource("2_ac7km")
 spawnRoot = NodePath("..")
-
