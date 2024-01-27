@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://dykf5xbcmwrx7"]
 
-[ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
 [ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_ac7km"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
 [ext_resource type="PackedScene" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
-[ext_resource type="PackedScene" uid="uid://cmv2qgx5we56s" path="res://assets/gameplay/FloorSpawner.tscn" id="4_sscqf"]
-[ext_resource type="PackedScene" uid="uid://dihik7ymlwbf6" path="res://assets/gameplay/WallSpawner.tscn" id="5_qg3o4"]
+[ext_resource type="PackedScene" path="res://assets/gameplay/FloorSpawner.tscn" id="4_sscqf"]
+[ext_resource type="PackedScene" path="res://assets/gameplay/WallSpawner.tscn" id="5_qg3o4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h0w0h"]
 sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
@@ -106,39 +106,51 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15, 0
 
 [node name="Meeple" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45757, 0, -14.3635)
+reduction_per_second = null
 
 [node name="Meeple2" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2287, 0, 12.365)
+reduction_per_second = null
 
 [node name="Meeple3" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08122, 0, 13.7231)
+reduction_per_second = null
 
 [node name="Meeple4" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54675, 0, -17.0713)
+reduction_per_second = null
 
 [node name="Meeple5" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.22442, 0, 9.6572)
+reduction_per_second = null
 
 [node name="Meeple6" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0855, 0, 11.0153)
+reduction_per_second = null
 
 [node name="Meeple7" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -15.6402, 0, -10.729)
+reduction_per_second = null
 
 [node name="Meeple8" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -4.34612, 0, 15.3925)
+reduction_per_second = null
 
 [node name="Meeple9" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, 12.7811, 0, 1.03146)
+reduction_per_second = null
 
 [node name="Meeple10" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -13.5747, 0, -14.5063)
+reduction_per_second = null
 
 [node name="Meeple11" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -2.28063, 0, 11.6152)
+reduction_per_second = null
 
 [node name="Meeple12" parent="." instance=ExtResource("4_1funl")]
 transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, 14.8466, 0, -2.74581)
+reduction_per_second = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)

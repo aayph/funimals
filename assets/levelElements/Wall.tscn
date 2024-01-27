@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7jmm6hwopybk"]
 
-[ext_resource type="PackedScene" uid="uid://dn3hm874mi2bl" path="res://assets/levelElements/wall.glb" id="1_0ek4c"]
-[ext_resource type="Shape3D" uid="uid://d16n54smjcnia" path="res://assets/levelElements/WallCollider.tres" id="2_250c7"]
+[ext_resource type="PackedScene" uid="uid://mbqyhbx8w152" path="res://assets/levelElements/wall.glb" id="1_0ek4c"]
+[ext_resource type="Shape3D" path="res://assets/levelElements/WallCollider.tres" id="2_250c7"]
 [ext_resource type="PackedScene" uid="uid://danavhklaydja" path="res://objects/repeller.tscn" id="3_ainbl"]
 
 [node name="Wall" type="Node3D"]

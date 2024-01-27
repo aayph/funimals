@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb6yyboukigia"]
+
+[ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
+
+[node name="Hud" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8dq6v")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.352941, 0.352941, 0.352941, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT GAME"
+
+[connection signal="pressed" from="PanelContainer/ColorRect/Button" to="." method="_on_quit_pressed"]
