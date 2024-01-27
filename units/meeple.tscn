@@ -12,6 +12,7 @@ script = ExtResource("1_1eyr5")
 area = NodePath("Area3D")
 direction_update_period_min = 0.7
 direction_update_period_max = 1.6
+base_happiness = 0.0
 
 [node name="Area3D" type="Area3D" parent="."]
 monitorable = false
@@ -25,6 +26,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.846714, 0)
 shape = SubResource("CapsuleShape3D_fkpat")
 
 [node name="meeple2" parent="." instance=ExtResource("2_4pycn")]
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]

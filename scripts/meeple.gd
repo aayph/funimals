@@ -2,8 +2,10 @@ extends CharacterBody3D
 class_name Meeple
 
 @export var area: Area3D
-@export var direction_update_period_min = 1.0
-@export var direction_update_period_max = 1.0
+@export var direction_update_period_min: float = 1.0
+@export var direction_update_period_max: float = 2.0
+@export var reduction_per_second: float = 1.0/60.0
+@export var base_happiness:float = 0.5
 var happiness: float
 var timer: float
 
@@ -11,17 +13,18 @@ var forced_direction: Vector3
 var wanted_direction: Vector3
 
 
-func change_happiness(happiness_change: float) -> float:
+func change_happiness(happiness_change: float, affect_money: bool = true) -> float:
 	var old_happiness := happiness
 	happiness += happiness_change
 	happiness = clamp(happiness, -1.0, 1.0)
 	for c in get_children():
 		if c.has_method("set_happiness"):
 			c.set_happiness(happiness)
-	Gamestate.meeple_happiness_changed.emit(self, happiness-old_happiness)
+	Gamestate.meeple_happiness_changed.emit(self, happiness-old_happiness, affect_money)
 	return happiness
 
 func _ready() -> void:
+	change_happiness(base_happiness, false)
 	timer = randf_range(direction_update_period_min, direction_update_period_max)
 	var close_objects := area.get_overlapping_bodies()
 	forced_direction = get_forced_direction(close_objects)
@@ -29,6 +32,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	timer -= delta
+	if happiness >= base_happiness:
+		change_happiness(-reduction_per_second * delta, false)
+	else:
+		change_happiness(reduction_per_second * delta, false)
 	if timer <= 0:
 		timer += randf_range(direction_update_period_min, direction_update_period_max)
 		var close_objects := area.get_overlapping_bodies()
