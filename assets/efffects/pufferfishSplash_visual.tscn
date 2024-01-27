@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3q80dmi5xptn"]
+
+[ext_resource type="PackedScene" uid="uid://c4fn6hikcx7dp" path="res://assets/efffects/pufferfishSplash.glb" id="1_rco26"]
+[ext_resource type="Shader" uid="uid://3c0viox614qw" path="res://assets/efffects/pufferfishSplash_visual.tres" id="2_dv8qn"]
+[ext_resource type="Texture2D" uid="uid://du6u6etrurxwy" path="res://textures/effects/beamBlur.png" id="3_lj675"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0awol"]
+render_priority = 0
+shader = ExtResource("2_dv8qn")
+shader_parameter/ColorParameter = Color(0.0941176, 0.772549, 0.858824, 1)
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Texture2DParameter = ExtResource("3_lj675")
+
+[node name="pufferfishSplash" instance=ExtResource("1_rco26")]
+
+[node name="pufferfishSplash_001" parent="." index="0"]
+cast_shadow = 0
+surface_material_override/0 = SubResource("ShaderMaterial_0awol")
