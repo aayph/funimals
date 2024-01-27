@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_8dq6v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -20,6 +21,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_filter = 2
 
 [node name="ColorRect" type="ColorRect" parent="PanelContainer"]
 custom_minimum_size = Vector2(150, 30)
@@ -40,6 +42,7 @@ text = "QUIT GAME"
 [node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)

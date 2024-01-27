@@ -167,3 +167,4 @@ enemy = ExtResource("2_ac7km")
 spawnRoot = NodePath("..")
 
 [node name="CameraRoot" parent="." instance=ExtResource("9_u1vfs")]
+sensitivity = 0.2
