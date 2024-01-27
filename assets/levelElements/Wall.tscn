@@ -20,3 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -0.5)
 shape = ExtResource("2_250c7")
 
 [node name="Repeller" parent="StaticBody3D" instance=ExtResource("3_ainbl")]
+base_strength = 0.0
+max_distance = 10.0
+distance_influence = 1.2
