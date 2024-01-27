@@ -1,6 +1,8 @@
 extends Node3D
+class_name CameraController
 
 @export var child_axis: Node3D
+@export var camera: Camera3D
 
 @export var min_pos: Vector3
 @export var max_pos: Vector3

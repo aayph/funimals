@@ -6,7 +6,7 @@
 
 [node name="PufferfishSpawner" type="Node3D"]
 script = ExtResource("1_46w2u")
-interval = 5.0
+interval = 3.0
 spawns = 4
 upVelocity = 5.0
 forwardVelocity = 8.0

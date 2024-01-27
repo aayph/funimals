@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func onTotalHappinessChanged(total_happiness: float):
-	text = ("%.0f" % abs(total_happiness * 10)) + " Meepiness"
+	text = ("%.1f" % abs(total_happiness)) + "% Meepiness"

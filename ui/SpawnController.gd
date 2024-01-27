@@ -17,10 +17,7 @@ var directionStartPoint: Vector2
 func _ready():
 	gameState = get_node("/root/Gamestate")
 	gameState.connect("activateBuildMode", onBuildModeActivated)
-	if (level != null):
-		camera = level.get_node("Camera")
 	directionIndicator = get_node("DirectionIndicator")
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

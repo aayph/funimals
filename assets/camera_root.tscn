@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cclb3e1rt1cr3"]
+[gd_scene load_steps=2 format=3 uid="uid://cu8h24w36181"]
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_0agyy"]
 
-[node name="CameraRoot" type="Node3D" node_paths=PackedStringArray("child_axis")]
+[node name="CameraRoot" type="Node3D" node_paths=PackedStringArray("child_axis", "camera")]
 script = ExtResource("1_0agyy")
 child_axis = NodePath("Node3D")
+camera = NodePath("Node3D/Node3D/Camera")
 min_pos = Vector3(-18, 0, -18)
 max_pos = Vector3(18, 0, 18)
 camera_speed = 15.0

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
-[ext_resource type="PackedScene" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
-[ext_resource type="PackedScene" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
-[ext_resource type="PackedScene" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
+[ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
+[ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
+[ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
 
 [node name="Hud" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
