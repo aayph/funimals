@@ -43,7 +43,6 @@ func _input(event):
 			directionIndicator.hide()
 			clearPreview()
 		elif (event.button_index == MOUSE_BUTTON_LEFT && event.pressed && buildModeActive):
-			print_debug(selectDirectionModeActive)
 			if (!selectDirectionModeActive):
 				selectDirectionModeActive = true
 				directionIndicator.show()

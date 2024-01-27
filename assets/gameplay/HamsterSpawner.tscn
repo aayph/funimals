@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl2avb61g8be0"]
+
+[ext_resource type="Script" path="res://assets/gameplay/HamsterSpawner.gd" id="1_p52cv"]
+[ext_resource type="PackedScene" uid="uid://b52e8gcdq6l5f" path="res://hamster.tscn" id="2_hpdog"]
+[ext_resource type="PackedScene" uid="uid://1bmepy3ba23v" path="res://assets/gameplay/portal_visual.tscn" id="3_nytop"]
+
+[node name="HamsterSpawner" type="Node3D"]
+script = ExtResource("1_p52cv")
+interval = 1.0
+spawns = 20
+forwardVelocity = 20.0
+enemy = ExtResource("2_hpdog")
+
+[node name="portal2" parent="." instance=ExtResource("3_nytop")]

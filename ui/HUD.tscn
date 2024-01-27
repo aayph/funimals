@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb6yyboukigia"]
+[gd_scene load_steps=4 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
+[ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
 
 [node name="Hud" type="PanelContainer"]
@@ -36,6 +37,23 @@ grow_vertical = 2
 text = "QUIT GAME"
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+
+[node name="PanelContainer2" type="MarginContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MoneyDisplay" parent="PanelContainer2" instance=ExtResource("2_qlw6x")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0 Meeps"
 
 [connection signal="pressed" from="PanelContainer/ColorRect/Button" to="." method="_on_quit_pressed"]

@@ -10,7 +10,9 @@ var MeepleList: Array[Meeple]
 var _total_happiness: float
 var current_state: StateChange = StateChange.MAIN_MENU
 var SpawnerCosts: Dictionary = {
-	"BasicSpawner": 100
+	"BasicSpawner": 100,
+	"PufferfishSpawner": 400,
+	"HamsterSpawner": 50
 }
 
 signal money_changed(money_added:float, total_money: float)

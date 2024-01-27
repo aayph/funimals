@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ig3rsxuv8mpf"]
 
-[ext_resource type="PackedScene" uid="uid://dl8edsvujp068" path="res://assets/gameplay/portal.glb" id="1_wqs58"]
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="1_wqs58"]
 
 [node name="FloorSpawnerPreview" type="Node3D"]
 

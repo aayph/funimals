@@ -5,16 +5,17 @@ extends TextureButton
 
 var spawnerId: String
 var gameState: Gamestate
+@export var label: Label
+@export var price: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pressed.connect(onClick)
 	spawnerId = spawner.get_state().get_node_name(0)
 	gameState = get_node("/root/Gamestate")
 	gameState.connect("money_changed", onMoneyChanged)
+	label.text = spawnerId + " bauen"
+	price.text = ("%d" % gameState.SpawnerCosts[spawnerId]) + " Meeps"
 	updateIsEnabled()
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
