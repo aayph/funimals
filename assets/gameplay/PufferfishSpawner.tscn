@@ -1,12 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dryu01xp38mdk"]
+[gd_scene load_steps=4 format=3 uid="uid://b186sgssn3x3x"]
 
 [ext_resource type="Script" path="res://assets/gameplay/PufferfishSpawner.gd" id="1_46w2u"]
 [ext_resource type="PackedScene" uid="uid://dmf3ymx3abp0" path="res://pufferfish.tscn" id="2_c8pgg"]
-[ext_resource type="PackedScene" path="res://assets/gameplay/portal_visual.tscn" id="3_g2phx"]
+[ext_resource type="PackedScene" uid="uid://cbbecxsg7m3t7" path="res://assets/gameplay/portal_visual.tscn" id="3_g2phx"]
 
 [node name="PufferfishSpawner" type="Node3D"]
 script = ExtResource("1_46w2u")
-interval = 5.0
+interval = 3.0
 spawns = 4
 upVelocity = 5.0
 forwardVelocity = 8.0
