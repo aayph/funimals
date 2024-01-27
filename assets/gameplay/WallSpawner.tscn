@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dihik7ymlwbf6"]
+
+[ext_resource type="Script" path="res://assets/gameplay/WallSpawner.gd" id="1_ph533"]
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="2_ou41m"]
+
+[node name="WallSpawner" type="Node3D"]
+script = ExtResource("1_ph533")
+
+[node name="portal2" parent="." instance=ExtResource("2_ou41m")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

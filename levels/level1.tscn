@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dykf5xbcmwrx7"]
 
-[ext_resource type="PackedScene" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
-[ext_resource type="PackedScene" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
-[ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
+[ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
+[ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_ac7km"]
+[ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
+[ext_resource type="PackedScene" uid="uid://cmv2qgx5we56s" path="res://assets/gameplay/FloorSpawner.tscn" id="4_sscqf"]
+[ext_resource type="PackedScene" uid="uid://dihik7ymlwbf6" path="res://assets/gameplay/WallSpawner.tscn" id="5_qg3o4"]
 
 [node name="Level" type="Node3D"]
 
 [node name="Floor" parent="." instance=ExtResource("1_486vs")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 20, 40)
+transform = Transform3D(1, 0, 0, 0, 0.707106, 0.707106, 0, -0.707106, 0.707106, 0, 30, 40)
 current = true
 
 [node name="East Wall" parent="." instance=ExtResource("3_01o2t")]
@@ -28,3 +30,28 @@ transform = Transform3D(-4, 0, -8.74228e-08, 0, 1, 0, 3.49691e-07, 0, -1, 0, 0, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
+
+[node name="FloorSpawner" parent="." node_paths=PackedStringArray("spawnRoot") instance=ExtResource("4_sscqf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+direction = Vector2(5, 0)
+interval = 3.0
+spawns = 3
+enemy = ExtResource("2_ac7km")
+spawnRoot = NodePath("..")
+
+[node name="WallSpawner" parent="." node_paths=PackedStringArray("spawnRoot") instance=ExtResource("5_qg3o4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -20)
+direction = Vector2(0, 3)
+interval = 3.0
+spawns = 3
+enemy = ExtResource("2_ac7km")
+spawnRoot = NodePath("..")
+
+[node name="WallSpawner2" parent="." node_paths=PackedStringArray("spawnRoot") instance=ExtResource("5_qg3o4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 1, 0)
+direction = Vector2(1, 1)
+interval = 3.0
+spawns = 3
+enemy = ExtResource("2_ac7km")
+spawnRoot = NodePath("..")
+
