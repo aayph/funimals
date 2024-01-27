@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bugs1c8eqn4df"]
+
+[ext_resource type="Script" path="res://Animal.gd" id="1_no4tm"]
+
+[node name="Animal" type="CharacterBody3D"]
+script = ExtResource("1_no4tm")
