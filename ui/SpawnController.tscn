@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2w20avey6vk7"]
+
+[ext_resource type="Script" path="res://ui/SpawnController.gd" id="1_dq7w8"]
+[ext_resource type="Shape3D" uid="uid://bca2ng3oa5j8w" path="res://assets/gameplay/WorldPlaneCollider.tres" id="2_5fb0q"]
+
+[node name="SpawnController" type="Node"]
+script = ExtResource("1_dq7w8")
+
+[node name="DirectionIndicator" type="Line2D" parent="."]
+width = 3.0
+default_color = Color(1, 1, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = ExtResource("2_5fb0q")
