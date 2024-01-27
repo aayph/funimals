@@ -7,7 +7,6 @@ input_name = "uv"
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_k8a5y"]
 parameter_name = "Texture2DParameter"
 texture_type = 1
-texture_repeat = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_c4ui0"]
 source = 5
@@ -15,22 +14,22 @@ source = 5
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_4c2rd"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_y0tkg"]
-output_port_for_preview = 0
 parameter_name = "FloatParameter"
-default_value = 7.0
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_88yma"]
 
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_twx40"]
 parameter_name = "ColorParameter"
+default_value_enabled = true
+default_value = Color(0.0941176, 0.772549, 0.858824, 1)
 
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
-uniform vec4 ColorParameter : source_color;
+uniform vec4 ColorParameter : source_color = vec4(0.094118, 0.772549, 0.858824, 1.000000);
 uniform float FloatParameter;
-uniform sampler2D Texture2DParameter : source_color, repeat_disable;
+uniform sampler2D Texture2DParameter : source_color;
 
 
 
@@ -70,7 +69,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-440.803, 59.2675)
+graph_offset = Vector2(-202.993, -37.3489)
 nodes/fragment/2/node = SubResource("VisualShaderNodeInput_2ykh1")
 nodes/fragment/2/position = Vector2(-760, 100)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_k8a5y")
