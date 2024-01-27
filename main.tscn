@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2w20avey6vk7"]
+[gd_scene load_steps=5 format=3 uid="uid://d2w20avey6vk7"]
 
 [ext_resource type="PackedScene" uid="uid://dykf5xbcmwrx7" path="res://levels/level1.tscn" id="1_47yas"]
 [ext_resource type="Script" path="res://SpawnController.gd" id="1_s8kcb"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_28k5k"]
+[ext_resource type="Shape3D" uid="uid://bca2ng3oa5j8w" path="res://assets/gameplay/WorldPlaneCollider.tres" id="4_sxx63"]
 
 [node name="SpawnController" type="Node"]
 script = ExtResource("1_s8kcb")
@@ -10,3 +11,15 @@ script = ExtResource("1_s8kcb")
 [node name="Level" parent="." instance=ExtResource("1_47yas")]
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_28k5k")]
+
+[node name="DirectionIndicator" type="Line2D" parent="."]
+width = 3.0
+default_color = Color(1, 1, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = ExtResource("4_sxx63")
