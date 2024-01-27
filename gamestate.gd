@@ -6,6 +6,7 @@ var MoneyPerHappiness: float = 100.0
 
 signal money_changed(money_added:float, total_money: float)
 signal meeple_happiness_changed(meeple: Meeple, value: float, affect_money: bool)
+signal activateBuildMode(spawnerBuilderFactory)
 
 func _ready() -> void:
 	meeple_happiness_changed.connect(_on_meeple_happiness_changed)

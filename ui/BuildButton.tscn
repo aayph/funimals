@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://b47t2jx4i8pnf"]
+
+[ext_resource type="Script" path="res://ui/BuildButton.gd" id="1_qbcqv"]
+
+[node name="BuildButton" type="TextureButton"]
+offset_right = 127.0
+offset_bottom = 63.0
+script = ExtResource("1_qbcqv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 19.0
+offset_right = 56.0
+offset_bottom = 42.0
+text = "Drück Mich!"

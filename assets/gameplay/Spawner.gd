@@ -23,7 +23,6 @@ func _process(delta):
 		spawnTimer -= interval
 		spawns -= 1
 		var enemyInstance: Node = enemy.instantiate()
-		print_debug(transform.origin, spawnOrigin)
 		enemyInstance.transform.origin = spawnOrigin
 		enemyInstance.set("linear_velocity", Vector3(direction.x, 1, direction.y))
 		spawnRoot.add_child(enemyInstance)

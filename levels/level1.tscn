@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
 [ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_ac7km"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
-[ext_resource type="PackedScene" uid="uid://cc52mpotfad8k" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
 [ext_resource type="PackedScene" uid="uid://cmv2qgx5we56s" path="res://assets/gameplay/FloorSpawner.tscn" id="4_sscqf"]
-[ext_resource type="PackedScene" path="res://assets/gameplay/WallSpawner.tscn" id="5_qg3o4"]
+[ext_resource type="PackedScene" uid="uid://dihik7ymlwbf6" path="res://assets/gameplay/WallSpawner.tscn" id="5_qg3o4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h0w0h"]
 sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
@@ -30,7 +30,7 @@ environment = SubResource("Environment_74w32")
 
 [node name="Floor" parent="." instance=ExtResource("1_486vs")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707106, 0.707106, 0, -0.707106, 0.707106, 0, 30, 40)
 current = true
 

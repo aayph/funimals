@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c57jw42ttcux1"]
+
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="1_wqs58"]
+
+[node name="FloorSpawnerPreview" type="Node3D"]
+
+[node name="portal2" parent="." instance=ExtResource("1_wqs58")]
