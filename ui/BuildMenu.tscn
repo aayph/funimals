@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7r18odt0vt1m"]
+
+[ext_resource type="Script" path="res://ui/BuildMenu.gd" id="1_2qpxi"]
+[ext_resource type="PackedScene" uid="uid://b47t2jx4i8pnf" path="res://ui/BuildButton.tscn" id="2_1be3d"]
+[ext_resource type="PackedScene" uid="uid://c57jw42ttcux1" path="res://assets/gameplay/FloorSpawnerPreview.tscn" id="3_ilh8o"]
+[ext_resource type="PackedScene" uid="uid://b0krwsf5hx46x" path="res://assets/gameplay/BasicSpawner.tscn" id="4_7n6au"]
+
+[node name="BuildMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2qpxi")
+
+[node name="BuildButton" parent="." instance=ExtResource("2_1be3d")]
+layout_mode = 0
+offset_top = 1.0
+offset_bottom = 64.0
+spawnerPreview = ExtResource("3_ilh8o")
+spawner = ExtResource("4_7n6au")

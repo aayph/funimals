@@ -30,7 +30,7 @@ environment = SubResource("Environment_74w32")
 
 [node name="Floor" parent="." instance=ExtResource("1_486vs")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707106, 0.707106, 0, -0.707106, 0.707106, 0, 30, 40)
 current = true
 

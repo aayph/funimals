@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2w20avey6vk7"]
+
+[ext_resource type="PackedScene" uid="uid://dykf5xbcmwrx7" path="res://levels/level1.tscn" id="1_47yas"]
+[ext_resource type="Script" path="res://SpawnController.gd" id="1_s8kcb"]
+[ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_28k5k"]
+
+[node name="SpawnController" type="Node"]
+script = ExtResource("1_s8kcb")
+
+[node name="Level" parent="." instance=ExtResource("1_47yas")]
+
+[node name="BuildMenu" parent="." instance=ExtResource("2_28k5k")]

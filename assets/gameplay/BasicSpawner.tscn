@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0krwsf5hx46x"]
+
+[ext_resource type="Script" path="res://assets/gameplay/BasicSpawner.gd" id="1_3c2fn"]
+[ext_resource type="PackedScene" uid="uid://b74gfdsfai4sa" path="res://assets/levelElements/TestBall.tscn" id="2_8pdsn"]
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="3_ga36v"]
+
+[node name="BasicSpawner" type="Node3D"]
+script = ExtResource("1_3c2fn")
+interval = 3.0
+spawns = 3
+enemy = ExtResource("2_8pdsn")
+
+[node name="portal2" parent="." instance=ExtResource("3_ga36v")]
