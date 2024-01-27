@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://2g23qtidm065"]
+
+[ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_mhim4"]
+[ext_resource type="Script" path="res://squid.gd" id="2_5nldn"]
+[ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_d0jlh"]
+[ext_resource type="PackedScene" uid="uid://basf1gwdab1op" path="res://squidSplatter.tscn" id="4_0fjhs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4rc1c"]
+radius = 0.687877
+height = 2.86802
+
+[node name="Squid" instance=ExtResource("1_mhim4")]
+script = ExtResource("2_5nldn")
+
+[node name="Mesh" parent="." index="0" instance=ExtResource("2_d0jlh")]
+
+[node name="SquidSplatter" parent="." index="1" instance=ExtResource("4_0fjhs")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921759, 0)
+shape = SubResource("CapsuleShape3D_4rc1c")

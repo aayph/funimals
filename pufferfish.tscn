@@ -30,4 +30,4 @@ disabled = true
 script = ExtResource("5_o2bsf")
 
 [node name="pufferfishSplash" parent="." instance=ExtResource("6_ywku2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.202569, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18749, 0)

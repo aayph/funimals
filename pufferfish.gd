@@ -19,7 +19,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (exploded):
-		if (timeTillDeath > 1):
+		if (timeTillDeath > 2):
 			queue_free()
 		timeTillDeath += delta
 		
@@ -29,6 +29,7 @@ func _collide(node):
 	_increase_meeple_happiness(happinessIncrease, node)
 	
 	if (life == 1):
+		gravity_scale = 0
 		explode.emit()
 	else:
 		_decrease_life()
