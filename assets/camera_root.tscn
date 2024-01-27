@@ -4,7 +4,7 @@
 
 [node name="CameraRoot" type="Node3D" node_paths=PackedStringArray("child_axis")]
 script = ExtResource("1_0agyy")
-child_axis = NodePath("")
+child_axis = NodePath("Node3D")
 min_pos = Vector3(-18, 0, -18)
 max_pos = Vector3(18, 0, 18)
 camera_speed = 15.0
