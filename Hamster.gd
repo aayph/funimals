@@ -9,6 +9,7 @@ var lastCollision
 var collidedOnce = false
 
 func _ready():
+	super._ready()
 	set_contact_monitor(true)
 	set_max_contacts_reported(10)
 	change_facing.emit(Vector3(xDirection, 0, zDirection).normalized())
