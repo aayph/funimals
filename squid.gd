@@ -4,7 +4,7 @@ signal splatter()
 
 @export var timer: float = 0
 @export var timeTillNextDash: float
-@export var speed: float = 500
+@export var speed: float = 1000
 @export var splatterCount: float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():

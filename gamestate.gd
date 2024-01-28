@@ -12,7 +12,7 @@ var current_state: StateChange = StateChange.MAIN_MENU
 var SpawnerCosts: Dictionary = {
 	"PufferfishSpawner": 150,
 	"HamsterSpawner": 50,
-	"SquidSpawner": 80
+	"SquidSpawner": 250
 }
 var SpawnerDisplayNames: Dictionary = {
 	"PufferfishSpawner": "Pufferfish",
