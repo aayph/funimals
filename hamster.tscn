@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/characters/hamsterMesh.gd" id="3_kg6x3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2giw"]
-friction = 0.05
+friction = 0.03
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cia6y"]
 radius = 0.228692
@@ -15,7 +15,7 @@ height = 0.793786
 mass = 3.77
 physics_material_override = SubResource("PhysicsMaterial_h2giw")
 script = ExtResource("2_85f4k")
-SPEED = 3000.0
+SPEED = 10000.0
 happinessIncrease = 0.2
 life = 6.0
 

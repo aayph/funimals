@@ -11,7 +11,6 @@ func _decrease_life():
 	if (life == 0):
 		queue_free()
 
-
 func _increase_meeple_happiness(value, meeple):
 
 	if (meeple.has_method("change_happiness")):
