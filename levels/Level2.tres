@@ -7,6 +7,6 @@
 script = ExtResource("1_pgdb0")
 LevelScene = ExtResource("1_5i1we")
 LevelName = "Level 2"
-StartingMoney = 500.0
+StartingMoney = 100.0
 WinValue = 0.8
 DeathValue = -0.8

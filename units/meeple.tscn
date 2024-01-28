@@ -13,7 +13,9 @@ script = ExtResource("1_1eyr5")
 area = NodePath("Area3D")
 direction_update_period_min = 0.7
 direction_update_period_max = 1.6
+reduction_per_second = 0.01
 base_happiness = 0.0
+speed = 4.5
 
 [node name="Area3D" type="Area3D" parent="."]
 monitorable = false
