@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2v0i3cuda6qt"]
+[gd_scene load_steps=4 format=3 uid="uid://bhr72toy820uk"]
 
 [ext_resource type="Script" path="res://ui/win_screen.gd" id="1_tgkbx"]
-[ext_resource type="Texture2D" uid="uid://iyh1lg0wambk" path="res://icons/UI/buttonBasicLong.png" id="2_bv80p"]
+[ext_resource type="Texture2D" uid="uid://cq5bkqksrflln" path="res://icons/UI/buttonBasicLong.png" id="2_bv80p"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gokyb"]
 font_size = 30

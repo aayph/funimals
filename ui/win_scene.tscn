@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceit5l8efvpgn"]
 
-[ext_resource type="Texture2D" uid="uid://bsuxbvx7ad0ps" path="res://icons/UI/buttonBasic.png" id="1_dl6yq"]
+[ext_resource type="Texture2D" uid="uid://p8o46abh1of5" path="res://icons/UI/buttonBasic.png" id="1_dl6yq"]
 [ext_resource type="Script" path="res://ui/loose_scene.gd" id="1_fjpqq"]
 
 [node name="WinScene" type="Panel"]

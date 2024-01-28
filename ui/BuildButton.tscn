@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b47t2jx4i8pnf"]
 
-[ext_resource type="Texture2D" uid="uid://c3o3nv4qt1e75" path="res://icons/UI/buttonBasicSmall.png" id="1_0y524"]
+[ext_resource type="Texture2D" uid="uid://m5hq3bo63kki" path="res://icons/UI/buttonBasicSmall.png" id="1_0y524"]
 [ext_resource type="Script" path="res://ui/BuildButton.gd" id="1_qbcqv"]
-[ext_resource type="Texture2D" uid="uid://ded5p8w4f6enh" path="res://icons/UI/buttonBasicSmallPressed.png" id="2_v8apo"]
-[ext_resource type="Texture2D" uid="uid://76xblibsf2ed" path="res://icons/UI/buttonBasicSmallHover.png" id="3_cnju7"]
-[ext_resource type="Texture2D" uid="uid://bftgem0t3tii2" path="res://icons/UI/buttonBasicSmallDisabled.png" id="4_xm8ws"]
+[ext_resource type="Texture2D" uid="uid://b5y0r55k16esc" path="res://icons/UI/buttonBasicSmallPressed.png" id="2_v8apo"]
+[ext_resource type="Texture2D" uid="uid://dtswnfvcn4r56" path="res://icons/UI/buttonBasicSmallHover.png" id="3_cnju7"]
+[ext_resource type="Texture2D" uid="uid://cbfu5smk71mqe" path="res://icons/UI/buttonBasicSmallDisabled.png" id="4_xm8ws"]
 
 [node name="BuildButton" type="TextureButton" node_paths=PackedStringArray("label", "price")]
 custom_minimum_size = Vector2(0, 70)

@@ -28,6 +28,10 @@ func _ready() -> void:
 func _on_happiness_changed(_total_happiness):
 	var progress: float = Gamestate.get_relative_win_happiness()
 
+	if _total_happiness == NAN:
+		_total_happiness = 0.01
+	if progress == NAN:
+		progress = 0.01
 
 	stream_a.volume_db = lerpf(a_min_db, a_max_db,
 		clampf((progress - a_min_progress) / (a_max_progress - a_min_progress), 0.0, 1.0))
@@ -37,9 +41,9 @@ func _on_happiness_changed(_total_happiness):
 		clampf((progress - c_min_progress) / (c_max_progress - c_min_progress), 0.0, 1.0))
 
 	var pitch = max_pitch - min_pitch
-	stream_a.pitch_scale = clampf(min_pitch + pitch * progress, 0.8, 1.0)
-	stream_b.pitch_scale = clampf(min_pitch + pitch * progress, 0.8, 1.0)
-	stream_c.pitch_scale = clampf(min_pitch + pitch * progress, 0.8, 1.0)
+	stream_a.set_pitch_scale(clampf(min_pitch + pitch * progress, 0.8, 1.0))
+	stream_b.set_pitch_scale(clampf(min_pitch + pitch * progress, 0.8, 1.0))
+	stream_c.set_pitch_scale(clampf(min_pitch + pitch * progress, 0.8, 1.0))
 
 
 func _on_level_1_finished() -> void:

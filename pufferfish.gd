@@ -19,9 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
+
 	timeSinceLastCollide+=delta
-	
+
 	if (exploded):
 		if (timeTillDeath > 2):
 			queue_free()
@@ -29,16 +29,16 @@ func _process(delta):
 
 
 func _collide(node):
-	
+
 	if (timeSinceLastCollide < 0.3 || (lastCollidedNode && lastCollidedNode == node)):
 		lastCollidedNode = null
 		return
-	
+
 	timeSinceLastCollide = 0
 	lastCollidedNode = node
-	
+
 	explode.emit(happinessIncrease)
-	
+
 	if (life == 1):
 		exploded = true
 	else:

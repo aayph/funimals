@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
-[ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
+[ext_resource type="PackedScene" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
-[ext_resource type="Texture2D" uid="uid://c3o3nv4qt1e75" path="res://icons/UI/buttonBasicSmall.png" id="4_nsrut"]
+[ext_resource type="Texture2D" uid="uid://m5hq3bo63kki" path="res://icons/UI/buttonBasicSmall.png" id="4_nsrut"]
 [ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
-[ext_resource type="Texture2D" uid="uid://ded5p8w4f6enh" path="res://icons/UI/buttonBasicSmallPressed.png" id="5_knymg"]
-[ext_resource type="Texture2D" uid="uid://76xblibsf2ed" path="res://icons/UI/buttonBasicSmallHover.png" id="6_obhj4"]
-[ext_resource type="Texture2D" uid="uid://bftgem0t3tii2" path="res://icons/UI/buttonBasicSmallDisabled.png" id="7_wo4hi"]
+[ext_resource type="Texture2D" uid="uid://b5y0r55k16esc" path="res://icons/UI/buttonBasicSmallPressed.png" id="5_knymg"]
+[ext_resource type="Texture2D" uid="uid://dtswnfvcn4r56" path="res://icons/UI/buttonBasicSmallHover.png" id="6_obhj4"]
+[ext_resource type="Texture2D" uid="uid://cbfu5smk71mqe" path="res://icons/UI/buttonBasicSmallDisabled.png" id="7_wo4hi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kux10"]
 bg_color = Color(0, 0, 0, 0.498039)

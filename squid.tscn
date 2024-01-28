@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_mhim4"]
 [ext_resource type="Script" path="res://squid.gd" id="2_5nldn"]
-[ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_d0jlh"]
-[ext_resource type="PhysicsMaterial" uid="uid://cfkmy2e64eu01" path="res://assets/levelElements/SquidPhysics.tres" id="2_pobeq"]
+[ext_resource type="PackedScene" uid="uid://jjx7om100wbj" path="res://assets/characters/squid.glb" id="2_d0jlh"]
+[ext_resource type="PhysicsMaterial" path="res://assets/levelElements/SquidPhysics.tres" id="2_pobeq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4rc1c"]
 radius = 0.687877

@@ -24,6 +24,6 @@ func _process(delta):
 
 
 
-func _explode(happinessIncrease):
+func _explode(_happinessIncrease):
 	visible = true
 	explode = true

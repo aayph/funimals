@@ -19,11 +19,11 @@ func _process(delta):
 		timer = 0
 		timeTillNextDash = randf_range(1,2)
 		apply_force(speed * Vector3(randf_range(-1, 1), randf_range(-1, 0), randf_range(-1, 1)).normalized() )
-		
+
 		_decrease_life()
 		_splatter()
 
-func _collision(node):
+func _collision(_node):
 	pass
 
 func _splatter():
