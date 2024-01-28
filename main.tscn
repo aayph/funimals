@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs7td66pulnym"]
+[gd_scene load_steps=7 format=3 uid="uid://cs7td66pulnym"]
 
 [ext_resource type="PackedScene" uid="uid://bpqj8sd324401" path="res://ui/mainmenu.tscn" id="1_e564k"]
 [ext_resource type="Resource" uid="uid://v33amwqicruq" path="res://levels/Level1.tres" id="2_hs5b1"]
 [ext_resource type="PackedScene" uid="uid://cb6yyboukigia" path="res://ui/HUD.tscn" id="2_io8cf"]
 [ext_resource type="Resource" uid="uid://bbs4ltdxidkll" path="res://levels/Level2.tres" id="3_4fd82"]
 [ext_resource type="PackedScene" uid="uid://ceit5l8efvpgn" path="res://ui/win_scene.tscn" id="5_tt5gp"]
+[ext_resource type="PackedScene" uid="uid://b2v0i3cuda6qt" path="res://ui/loose_scene.tscn" id="6_ht7ti"]
 
 [node name="Main" type="Node"]
 
@@ -15,3 +16,5 @@ LevelList = Array[Resource("res://levels/level_data.gd")]([ExtResource("2_hs5b1"
 visible = false
 
 [node name="WinScene" parent="." instance=ExtResource("5_tt5gp")]
+
+[node name="LooseScene" parent="." instance=ExtResource("6_ht7ti")]

@@ -1,7 +1,7 @@
 extends Node
 
 @export var LevelList: Array[LevelData]
-@export var LevelLabel: RichTextLabel
+@export var LevelLabel: Label
 
 var selected_level: LevelData
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func set_level(level: LevelData):
 	selected_level = level
-	LevelLabel.text = "[center]"+level.LevelName+"[/center]"
+	LevelLabel.text = level.LevelName
 
 func _on_next():
 	var index = LevelList.find(selected_level) + 1
