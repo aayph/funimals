@@ -1,59 +1,98 @@
-[gd_scene load_steps=6 format=3 uid="uid://basf1gwdab1op"]
+[gd_scene load_steps=7 format=3 uid="uid://basf1gwdab1op"]
 
 [ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_6k5tp"]
+[ext_resource type="PhysicsMaterial" uid="uid://bksbonoasj87w" path="res://assets/levelElements/SquidSplaterPhysics.tres" id="2_hile7"]
 [ext_resource type="Script" path="res://squidSplatter.gd" id="2_ixi7l"]
-[ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_sstpl"]
 [ext_resource type="PackedScene" uid="uid://x88fj8f4chae" path="res://assets/efffects/squidEffect_visual.tscn" id="3_7pief"]
+[ext_resource type="Script" path="res://SquidSplatterCollision.gd" id="5_vrvpx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oplsr"]
-radius = 0.534751
-height = 7.91912
+radius = 0.621341
+height = 10.4352
 
 [node name="SquidSplatter" instance=ExtResource("1_6k5tp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.176511, 0)
+collision_layer = 3
+collision_mask = 3
+mass = 1000.0
+physics_material_override = ExtResource("2_hile7")
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
 max_contacts_reported = 100
 contact_monitor = true
 script = ExtResource("2_ixi7l")
+meeplesHit = []
 
-[node name="squid2" parent="." index="0" instance=ExtResource("2_sstpl")]
+[node name="Area3D" type="Area3D" parent="." index="0"]
+collision_layer = 3
+collision_mask = 3
+monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(0.950288, 0, -0.311373, 0.311371, -0.00329868, 0.950283, -0.00102712, -0.999995, -0.00313469, -0.0462739, -0.270026, -4.43258)
 shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
 
-[node name="squidEffect4" parent="CollisionShape3D" index="0" instance=ExtResource("3_7pief")]
+[node name="squidEffect4" parent="Area3D/CollisionShape3D" index="0" instance=ExtResource("3_7pief")]
 transform = Transform3D(-0.950271, 0.311371, 0.00565439, 0.00486933, -0.00329868, 0.999982, 0.311385, 0.950283, 0.00161847, 0.123499, -4.43344, 0.228298)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(0.487413, 0.858991, -0.156725, 0.311371, -0.00329865, 0.950283, 0.815767, -0.51198, -0.269073, 4.08554, -0.270026, -2.42636)
-shape = SubResource("CapsuleShape3D_oplsr")
+[node name="Area3D2" type="Area3D" parent="." index="1"]
+collision_layer = 3
+collision_mask = 3
 
-[node name="squidEffect3" parent="CollisionShape3D2" index="0" instance=ExtResource("3_7pief")]
-transform = Transform3D(-0.949643, 0.311371, 0.0350031, 0.0357539, -0.00329864, 0.999355, 0.311286, 0.950282, -0.00800018, 0.0720781, -4.75258, 0.244039)
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="3"]
-transform = Transform3D(0.464419, -0.871911, -0.155199, 0.311371, -0.00329869, 0.950283, -0.829074, -0.489654, 0.269956, -4.2219, -0.270026, -2.33976)
-shape = SubResource("CapsuleShape3D_oplsr")
-
-[node name="squidEffect5" parent="CollisionShape3D3" index="0" instance=ExtResource("3_7pief")]
-transform = Transform3D(-0.950198, 0.311371, 0.0131342, 0.0127409, -0.00329865, 0.999913, 0.311388, 0.950283, -0.000832677, 0.104979, -4.82768, 0.232998)
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="4"]
-transform = Transform3D(-0.482678, -0.861943, 0.155163, 0.311371, -0.00329868, 0.950282, -0.818578, 0.506994, 0.269977, -4.13442, -0.270026, 2.49117)
-shape = SubResource("CapsuleShape3D_oplsr")
-
-[node name="squidEffect6" parent="CollisionShape3D4" index="0" instance=ExtResource("3_7pief")]
-transform = Transform3D(-0.950103, 0.311371, 0.0187891, 0.0186912, -0.0032987, 0.99982, 0.311377, 0.950283, -0.00268586, 0.127697, -4.82754, 0.225554)
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="5"]
-transform = Transform3D(0.950288, 0, -0.311373, 0.311371, -0.00329868, 0.950283, -0.00102712, -0.999995, -0.00313469, -0.0462739, -0.270026, 4.96721)
-shape = SubResource("CapsuleShape3D_oplsr")
-
-[node name="squidEffect7" parent="CollisionShape3D5" index="0" instance=ExtResource("3_7pief")]
-transform = Transform3D(0.934907, 0.350952, -0.0527431, -0.0489622, -0.0196453, -0.998607, -0.3515, 0.936187, -0.00118315, 0.133154, 4.96629, 0.257763)
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="." index="6"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Area3D2" index="0"]
 transform = Transform3D(0.497783, -0.851256, -0.16606, 0.311371, -0.00329869, 0.950283, -0.809481, -0.524741, 0.263415, 4.32747, -0.270026, 2.93905)
 shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
 
-[node name="squidEffect2" parent="CollisionShape3D6" index="0" instance=ExtResource("3_7pief")]
+[node name="squidEffect2" parent="Area3D2/CollisionShape3D6" index="0" instance=ExtResource("3_7pief")]
 transform = Transform3D(0.949896, 0.311371, -0.0272952, -0.0276423, -0.00329867, -0.999612, -0.311341, 0.950283, 0.00547367, 0.309043, 5.22513, 0.20103)
+
+[node name="Area3D3" type="Area3D" parent="." index="2"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Area3D3" index="0"]
+transform = Transform3D(0.950288, 0, -0.311373, 0.311371, -0.00329868, 0.950283, -0.00102712, -0.999995, -0.00313469, -0.0462739, -0.270026, 4.96721)
+shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
+
+[node name="squidEffect7" parent="Area3D3/CollisionShape3D5" index="0" instance=ExtResource("3_7pief")]
+transform = Transform3D(0.934907, 0.350952, -0.0527431, -0.0489622, -0.0196453, -0.998607, -0.3515, 0.936187, -0.00118315, 0.133154, 4.96629, 0.257763)
+
+[node name="Area3D4" type="Area3D" parent="." index="3"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Area3D4" index="0"]
+transform = Transform3D(-0.482678, -0.861943, 0.155163, 0.311371, -0.00329868, 0.950282, -0.818578, 0.506994, 0.269977, -4.13442, -0.270026, 2.49117)
+shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
+
+[node name="squidEffect6" parent="Area3D4/CollisionShape3D4" index="0" instance=ExtResource("3_7pief")]
+transform = Transform3D(-0.950103, 0.311371, 0.0187891, 0.0186912, -0.0032987, 0.99982, 0.311377, 0.950283, -0.00268586, 0.127697, -4.82754, 0.225554)
+
+[node name="Area3D5" type="Area3D" parent="." index="4"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D5" index="0"]
+transform = Transform3D(0.464419, -0.871911, -0.155199, 0.311371, -0.00329869, 0.950283, -0.829074, -0.489654, 0.269956, -4.2219, -0.270026, -2.33976)
+shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
+
+[node name="squidEffect5" parent="Area3D5/CollisionShape3D3" index="0" instance=ExtResource("3_7pief")]
+transform = Transform3D(-0.950198, 0.311371, 0.0131342, 0.0127409, -0.00329865, 0.999913, 0.311388, 0.950283, -0.000832677, 0.104979, -4.82768, 0.232998)
+
+[node name="Area3D6" type="Area3D" parent="." index="5"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D6" index="0"]
+transform = Transform3D(0.487413, 0.858991, -0.156725, 0.311371, -0.00329865, 0.950283, 0.815767, -0.51198, -0.269073, 4.08554, -0.270026, -2.42636)
+shape = SubResource("CapsuleShape3D_oplsr")
+script = ExtResource("5_vrvpx")
+
+[node name="squidEffect3" parent="Area3D6/CollisionShape3D2" index="0" instance=ExtResource("3_7pief")]
+transform = Transform3D(-0.949643, 0.311371, 0.0350031, 0.0357539, -0.00329864, 0.999355, 0.311286, 0.950282, -0.00800018, 0.0720781, -4.75258, 0.244039)

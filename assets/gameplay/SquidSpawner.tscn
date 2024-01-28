@@ -7,7 +7,7 @@
 [node name="SquidSpawner" type="Node3D"]
 script = ExtResource("1_yjn1i")
 interval = 3.0
-spawns = 4
+spawns = 3
 upVelocity = 10.0
 forwardVelocity = 5.0
 enemy = ExtResource("2_nc3uo")

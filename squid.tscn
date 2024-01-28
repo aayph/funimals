@@ -3,21 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_mhim4"]
 [ext_resource type="Script" path="res://squid.gd" id="2_5nldn"]
 [ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_d0jlh"]
-[ext_resource type="PackedScene" uid="uid://basf1gwdab1op" path="res://squidSplatter.tscn" id="4_0fjhs"]
+[ext_resource type="PhysicsMaterial" uid="uid://cfkmy2e64eu01" path="res://assets/levelElements/SquidPhysics.tres" id="2_pobeq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4rc1c"]
 radius = 0.687877
-height = 2.86802
+height = 2.4822
 
 [node name="Squid" instance=ExtResource("1_mhim4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+physics_material_override = ExtResource("2_pobeq")
+inertia = Vector3(1000, 1000, 1000)
 script = ExtResource("2_5nldn")
-happinessIncrease = 0.1
-life = 1.0
+timer = 0.0
+timeTillNextDash = 0.0
+speed = 500.0
+splatterCount = 0.0
+happinessIncrease = 0.07
+life = 5.0
 
 [node name="Mesh" parent="." index="0" instance=ExtResource("2_d0jlh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.461348, 0)
 
-[node name="SquidSplatter" parent="." index="1" instance=ExtResource("4_0fjhs")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.921759, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25335, 0)
 shape = SubResource("CapsuleShape3D_4rc1c")
