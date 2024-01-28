@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/gameplay/FloorSpawner.gd" id="1_awq5d"]
 [ext_resource type="PackedScene" uid="uid://dmf3ymx3abp0" path="res://pufferfish.tscn" id="2_27is2"]
-[ext_resource type="PackedScene" uid="uid://1bmepy3ba23v" path="res://assets/gameplay/portal_visual.tscn" id="3_7cn5j"]
+[ext_resource type="PackedScene" uid="uid://jailfvb63y8m" path="res://assets/gameplay/portal_visual.tscn" id="3_7cn5j"]
 
 [node name="FloorSpawner" type="Node3D"]
 script = ExtResource("1_awq5d")
