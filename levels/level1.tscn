@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dykf5xbcmwrx7"]
 
 [ext_resource type="Script" path="res://levels/level_script.gd" id="1_3phre"]
-[ext_resource type="PackedScene" uid="uid://d2tyul4dvvxmp" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="3_01o2t"]
 [ext_resource type="PackedScene" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]

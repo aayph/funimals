@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj5qjrydyy4p2"]
+[gd_scene load_steps=6 format=3 uid="uid://cj5qjrydyy4p2"]
 
-[ext_resource type="PackedScene" uid="uid://boqfychaq1mh0" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="2_kupl4"]
-[ext_resource type="PackedScene" uid="uid://byojyg8y00cx3" path="res://assets/levelElements/WallHalf.tscn" id="3_2h63y"]
-[ext_resource type="PackedScene" uid="uid://cc52mpotfad8k" path="res://assets/levelElements/WallPillar.tscn" id="4_ibsen"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/WallHalf.tscn" id="3_2h63y"]
+[ext_resource type="PackedScene" path="res://assets/levelElements/WallPillar.tscn" id="4_ibsen"]
+[ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="5_ggnkc"]
 
 [node name="Level2" type="Node3D"]
 
@@ -120,3 +121,5 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 
 
 [node name="wallPillar8" parent="Pillars" instance=ExtResource("4_ibsen")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0, 21)
+
+[node name="CameraRoot" parent="." instance=ExtResource("5_ggnkc")]

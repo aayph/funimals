@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://bbs4ltdxidkll"]
+
+[ext_resource type="PackedScene" uid="uid://cj5qjrydyy4p2" path="res://levels/level2.tscn" id="1_5i1we"]
+[ext_resource type="Script" path="res://levels/level_data.gd" id="1_pgdb0"]
+
+[resource]
+script = ExtResource("1_pgdb0")
+LevelScene = ExtResource("1_5i1we")
+LevelName = "Level 2"
+StartingMoney = 500.0
+WinValue = 0.8
+DeathValue = -0.8
