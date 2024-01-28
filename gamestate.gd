@@ -14,6 +14,11 @@ var SpawnerCosts: Dictionary = {
 	"PufferfishSpawner": 400,
 	"HamsterSpawner": 50
 }
+var SpawnerDisplayNames: Dictionary = {
+	"BasicSpawner": "Test",
+	"PufferfishSpawner": "Pufferfish",
+	"HamsterSpawner": "Hamster"
+}
 
 signal money_changed(money_added:float, total_money: float)
 signal total_happiness_changed(total_happiness:float)

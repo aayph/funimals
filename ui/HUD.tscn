@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb6yyboukigia"]
+[gd_scene load_steps=10 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
-[ext_resource type="PackedScene" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
+[ext_resource type="Texture2D" uid="uid://djo7ovrjc6dhs" path="res://icons/UI/buttonBasic_noborder.png" id="2_cku8g"]
+[ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
+[ext_resource type="Texture2D" uid="uid://i4hn77nvtlxe" path="res://icons/UI/buttonBasicHover_noborder.png" id="3_6lv3y"]
+[ext_resource type="Texture2D" uid="uid://b5xd4jbgojh77" path="res://icons/UI/buttonBasicPressed_noborder.png" id="3_17qm6"]
+[ext_resource type="Texture2D" uid="uid://cmvtepyhaagbm" path="res://icons/UI/buttonBasicDisabled_noborder.png" id="4_f608a"]
 [ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hj88"]
+font_size = 30
 
 [node name="Hud" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -15,32 +22,45 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_8dq6v")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="MarginContainer3" type="MarginContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
-custom_minimum_size = Vector2(150, 30)
+[node name="Button" type="TextureButton" parent="MarginContainer3"]
+custom_minimum_size = Vector2(150, 70)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.352941, 0.352941, 0.352941, 1)
+texture_normal = ExtResource("2_cku8g")
+texture_pressed = ExtResource("3_17qm6")
+texture_hover = ExtResource("3_6lv3y")
+texture_disabled = ExtResource("4_f608a")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Button" type="Button" parent="PanelContainer/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer3/Button"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "QUIT GAME"
+text = "Quit"
+label_settings = SubResource("LabelSettings_0hj88")
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
-self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 mouse_filter = 2
 
@@ -76,4 +96,4 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "0 Meepiness"
 
-[connection signal="pressed" from="PanelContainer/ColorRect/Button" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_quit_pressed"]

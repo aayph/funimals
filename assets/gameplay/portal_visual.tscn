@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://jailfvb63y8m"]
 
-[ext_resource type="PackedScene" uid="uid://cfg5uho52fsvs" path="res://assets/gameplay/portal.glb" id="1_pcyyq"]
+[ext_resource type="PackedScene" uid="uid://b4lex3fi1xgq4" path="res://assets/gameplay/portal.glb" id="1_pcyyq"]
 [ext_resource type="Shader" uid="uid://cbg73yce27kji" path="res://assets/gameplay/portal_visual.tres" id="2_yqly7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvif6"]
