@@ -1,35 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmf3ymx3abp0"]
+[gd_scene load_steps=8 format=3 uid="uid://dmf3ymx3abp0"]
 
-[ext_resource type="PhysicsMaterial" path="res://assets/levelElements/NoFriction.tres" id="1_r60io"]
+[ext_resource type="PhysicsMaterial" uid="uid://dtmv5l631a08u" path="res://assets/levelElements/NoFriction.tres" id="1_r60io"]
 [ext_resource type="Script" path="res://pufferfish.gd" id="2_e6kbq"]
-[ext_resource type="PackedScene" uid="uid://dro6c3fogbwu4" path="res://assets/characters/pufferfish.glb" id="2_t4cbb"]
-[ext_resource type="Script" path="res://assets/characters/pufferfishMesh.gd" id="4_ffoyk"]
+[ext_resource type="PackedScene" uid="uid://dyxvcmfrsnqwq" path="res://assets/characters/pufferfish.glb" id="2_t4cbb"]
 [ext_resource type="Script" path="res://pufferfishExplosionCollision.gd" id="5_o2bsf"]
 [ext_resource type="PackedScene" uid="uid://d3q80dmi5xptn" path="res://assets/efffects/pufferfishSplash_visual.tscn" id="6_ywku2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_awhy4"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5ukpr"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_50oa4"]
+radius = 0.724045
 
 [node name="Pufferfish" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209067, 0)
 physics_material_override = ExtResource("1_r60io")
 script = ExtResource("2_e6kbq")
-happinessIncrease = 0.2
-life = 3.0
+happinessIncrease = 0.05
+life = 10.0
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.11118, 0)
 shape = SubResource("SphereShape3D_awhy4")
 
 [node name="Mesh" parent="." instance=ExtResource("2_t4cbb")]
-script = ExtResource("4_ffoyk")
-
-[node name="ExplosionCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, -4.41984, 0)
-shape = SubResource("CylinderShape3D_5ukpr")
-disabled = true
-script = ExtResource("5_o2bsf")
 
 [node name="pufferfishSplash" parent="." instance=ExtResource("6_ywku2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18749, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18749, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+
+[node name="ExplosionCollision" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.00448227, 1.66802, 0.0181761)
+shape = SubResource("SphereShape3D_50oa4")
+script = ExtResource("5_o2bsf")
+
+[node name="Timer" type="Timer" parent="Area3D/ExplosionCollision"]
+wait_time = 0.241

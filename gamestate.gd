@@ -11,7 +11,7 @@ var _total_happiness: float
 var current_state: StateChange = StateChange.MAIN_MENU
 var SpawnerCosts: Dictionary = {
 	"BasicSpawner": 100,
-	"PufferfishSpawner": 400,
+	"PufferfishSpawner": 150,
 	"HamsterSpawner": 50
 }
 

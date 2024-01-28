@@ -8,8 +8,8 @@
 script = ExtResource("1_46w2u")
 interval = 3.0
 spawns = 4
-upVelocity = 5.0
-forwardVelocity = 8.0
+upVelocity = 8.0
+forwardVelocity = 15.0
 enemy = ExtResource("2_c8pgg")
 
 [node name="portal2" parent="." instance=ExtResource("3_g2phx")]

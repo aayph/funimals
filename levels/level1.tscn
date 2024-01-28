@@ -263,6 +263,17 @@ shape = SubResource("BoxShape3D_yhv8y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51025, -24.5429, -0.191765)
 shape = SubResource("BoxShape3D_yhv8y")
 
+[node name="StaticBody3D5" type="StaticBody3D" parent="Invisible Walls/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 0.999505, 0.0314631, 0, -0.0314631, 0.999505, 0, -2.4814, 40.2084)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D5/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51025, 7.10992, -0.191765)
+shape = SubResource("BoxShape3D_yhv8y")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D5/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51025, -24.5429, -0.191765)
+shape = SubResource("BoxShape3D_yhv8y")
+
 [node name="StaticBody3D3" type="StaticBody3D" parent="Invisible Walls"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 0)
 

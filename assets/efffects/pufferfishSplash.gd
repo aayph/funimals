@@ -13,14 +13,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (explode):
+		explodeTimer += delta
 		if (explodeTimer < 0.7):
 			(surfaceOverrideMaterial).set_shader_parameter("FloatParameter", explodeTimer)
-		explodeTimer += delta
-	if (explodeTimer > 2):
-		(surfaceOverrideMaterial).set_shader_parameter("FloatParameter", 0)
-		get_parent_node_3d().queue_free()
+		else:
+			(surfaceOverrideMaterial).set_shader_parameter("FloatParameter", 0)
+			explode = false
+			visible = false
+			explodeTimer = 0
 
 
-func _explode():
+
+func _explode(happinessIncrease):
 	visible = true
 	explode = true
