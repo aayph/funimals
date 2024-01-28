@@ -10,6 +10,9 @@
 
 [node name="Meeple" type="CharacterBody3D" node_paths=PackedStringArray("area")]
 collision_layer = 2
+slide_on_ceiling = false
+floor_stop_on_slope = false
+platform_wall_layers = 15
 script = ExtResource("1_1eyr5")
 area = NodePath("Area3D")
 direction_update_period_min = 0.7

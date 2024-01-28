@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 		forced_direction = get_forced_direction(close_objects)
 		wanted_direction = Vector3(clampf(wanted_direction.x + randf_range(-1.0, 1.0) * 0.8, -0.5, 0.5),
 		 0, clampf(wanted_direction.z + randf_range(-1.0, 1.0) * 0.8, -0.5, 0.5))
+		look_at(forced_direction + wanted_direction + transform.origin)
 
 
 func _physics_process(_delta: float) -> void:
