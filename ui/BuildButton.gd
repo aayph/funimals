@@ -10,12 +10,15 @@ var gameState: Gamestate
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawnerId = spawner.get_state().get_node_name(0)
-	gameState = get_node("/root/Gamestate")
-	gameState.connect("money_changed", onMoneyChanged)
-	label.text = spawnerId + " bauen"
-	price.text = ("%d" % gameState.SpawnerCosts[spawnerId]) + " Meeps"
-	updateIsEnabled()
+	if (spawner != null):
+		spawnerId = spawner.get_state().get_node_name(0)
+		gameState = get_node("/root/Gamestate")
+		gameState.connect("money_changed", onMoneyChanged)
+		label.text = gameState.SpawnerDisplayNames[spawnerId] # + " bauen"
+		price.text = ("%d" % gameState.SpawnerCosts[spawnerId]) + " Meeps"
+		updateIsEnabled()
+	else:
+		hide()
 
 func onClick():
 	gameState = get_node("/root/Gamestate")

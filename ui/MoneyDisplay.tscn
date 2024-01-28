@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://crndyons7hfbh"]
+[gd_scene load_steps=3 format=3 uid="uid://crndyons7hfbh"]
 
 [ext_resource type="Script" path="res://ui/MoneyDisplay.gd" id="1_5mosm"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_545fo"]
+font_size = 30
+
 [node name="MoneyDisplay" type="Label"]
+label_settings = SubResource("LabelSettings_545fo")
 script = ExtResource("1_5mosm")

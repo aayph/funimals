@@ -14,6 +14,11 @@ var SpawnerCosts: Dictionary = {
 	"PufferfishSpawner": 150,
 	"HamsterSpawner": 50
 }
+var SpawnerDisplayNames: Dictionary = {
+	"BasicSpawner": "Test",
+	"PufferfishSpawner": "Pufferfish",
+	"HamsterSpawner": "Hamster"
+}
 
 signal money_changed(money_added:float, total_money: float)
 signal total_happiness_changed(total_happiness:float)
@@ -65,12 +70,11 @@ func get_loose_value() -> float:
 	return Data.DeathValue
 
 func loose_level():
-	change_state.emit(StateChange.LEVEL_WIN)
+	change_state.emit(StateChange.LEVEL_LOOSE)
 	return_mainmenu()
 
 func win_level():
-	change_state.emit(StateChange.LEVEL_LOOSE)
-	return_mainmenu()
+	change_state.emit(StateChange.LEVEL_WIN)
 
 func return_mainmenu():
 	change_state.emit(StateChange.MAIN_MENU)
