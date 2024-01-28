@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dykf5xbcmwrx7"]
+[gd_scene load_steps=14 format=3 uid="uid://dykf5xbcmwrx7"]
 
 [ext_resource type="Script" path="res://levels/level_script.gd" id="1_3phre"]
 [ext_resource type="PackedScene" uid="uid://brq6njohfogq4" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://b8pktdq3p8gjw" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="6_15e35"]
-[ext_resource type="PackedScene" uid="uid://dvbed30uyt87n" path="res://assets/gameplay/corner_collider_ramp.tscn" id="7_m5fve"]
+[ext_resource type="PackedScene" path="res://assets/gameplay/corner_collider_ramp.tscn" id="7_m5fve"]
 [ext_resource type="PackedScene" uid="uid://ce8kxmiromtpc" path="res://assets/gameplay/Meadow.tscn" id="8_xukc3"]
+[ext_resource type="PackedScene" uid="uid://bmxgrxxb50w7e" path="res://music/music_player.tscn" id="9_8knyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h0w0h"]
 sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
@@ -378,3 +379,5 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 20, 0, -
 
 [node name="meadow2" parent="." instance=ExtResource("8_xukc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.549844, 0)
+
+[node name="MusicPlayer" parent="." instance=ExtResource("9_8knyr")]

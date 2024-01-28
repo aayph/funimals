@@ -4,7 +4,7 @@ class_name State
 enum StateChange {MAIN_MENU, LEVEL_START, LEVEL_WIN, LEVEL_LOOSE}
 
 var Money: float
-var MoneyPerHappiness: float = 20.0
+var MoneyPerHappiness: float = 30.0
 var Data: LevelData
 var MeepleList: Array[Meeple]
 var _total_happiness: float
@@ -65,6 +65,9 @@ func _start_level(data: LevelData):
 func get_relative_happiness() -> float:
 	return abs(_total_happiness / MeepleList.size())
 
+func get_relative_win_happiness() -> float:
+	return abs(_total_happiness / MeepleList.size()) / Data.WinValue
+
 func get_win_value() -> float:
 	return Data.WinValue
 
@@ -73,7 +76,6 @@ func get_loose_value() -> float:
 
 func loose_level():
 	change_state.emit(StateChange.LEVEL_LOOSE)
-	return_mainmenu()
 
 func win_level():
 	change_state.emit(StateChange.LEVEL_WIN)
