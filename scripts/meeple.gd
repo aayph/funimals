@@ -7,6 +7,7 @@ class_name Meeple
 @export var reduction_per_second: float = 1.0/60.0
 @export var base_happiness:float = 0.5
 @export var speed:float = 4.0
+@export var emoji: PackedScene
 
 var happiness: float
 var timer: float
@@ -18,6 +19,8 @@ var is_meeple = true
 
 func change_happiness(happiness_change: float, affect_money: bool = true) -> float:
 	var old_happiness := happiness
+	if affect_money:
+		confetti(roundi(happiness_change * 11.0))
 	happiness += happiness_change
 	happiness = clamp(happiness, -1.0, 1.0)
 	for c in get_children():
@@ -25,6 +28,13 @@ func change_happiness(happiness_change: float, affect_money: bool = true) -> flo
 			c.set_happiness(happiness)
 	Gamestate.meeple_happiness_changed.emit(self, happiness-old_happiness, affect_money)
 	return happiness
+
+const confetti_force = 10
+func confetti(amount: int = 1):
+	for n in amount:
+		var confett = emoji.instantiate()
+		add_child(confett)
+		confett.apply_force(Vector3(randf()-0.5, 2.0, randf()-0.5) * confetti_force)
 
 func _ready() -> void:
 	Gamestate.change_state.connect(_on_state_change)
@@ -49,6 +59,9 @@ func _process(delta: float) -> void:
 	else:
 		change_happiness(reduction_per_second * delta, false)
 	if timer <= 0:
+		if Gamestate.current_state == Gamestate.StateChange.LEVEL_WIN:
+			confetti()
+
 		timer += randf_range(direction_update_period_min, direction_update_period_max)
 		var close_objects := area.get_overlapping_bodies()
 		forced_direction = get_forced_direction(close_objects)

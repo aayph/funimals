@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://s7ktxprbqvns"]
+[gd_scene load_steps=6 format=3 uid="uid://s7ktxprbqvns"]
 
 [ext_resource type="Script" path="res://scripts/meeple.gd" id="1_1eyr5"]
+[ext_resource type="PackedScene" uid="uid://dgnptplwx5jpq" path="res://icons/emoji.tscn" id="2_5aaot"]
 [ext_resource type="PackedScene" uid="uid://bo8a5al71nr0u" path="res://units/meeple_visual.tscn" id="2_43dxg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ql3g"]
@@ -16,6 +17,7 @@ direction_update_period_max = 1.6
 reduction_per_second = 0.01
 base_happiness = 0.0
 speed = 4.5
+emoji = ExtResource("2_5aaot")
 
 [node name="Area3D" type="Area3D" parent="."]
 monitorable = false

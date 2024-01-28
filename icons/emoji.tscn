@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgnptplwx5jpq"]
+
+[ext_resource type="Texture2D" uid="uid://b0m6qyj1wx1qi" path="res://icons/UI/emoji01.png" id="1_jkskm"]
+[ext_resource type="Script" path="res://icons/emoji.gd" id="1_rcm3f"]
+[ext_resource type="Texture2D" uid="uid://2msuc6db75ot" path="res://icons/UI/emoji02.png" id="2_8gsa6"]
+[ext_resource type="Texture2D" uid="uid://eqn6xhxx4h1t" path="res://icons/UI/emoji03.png" id="4_3pajq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1ptyw"]
+friction = 0.0
+bounce = 0.78
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ddck3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykdsy"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_jkskm")
+disable_receive_shadows = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_melbf"]
+material = SubResource("StandardMaterial3D_ykdsy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4g4g3"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_8gsa6")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_1tyvw"]
+material = SubResource("StandardMaterial3D_4g4g3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unkln"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_3pajq")
+disable_receive_shadows = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_44b5v"]
+material = SubResource("StandardMaterial3D_unkln")
+
+[node name="Node3D" type="RigidBody3D" node_paths=PackedStringArray("nodes")]
+collision_layer = 4
+collision_mask = 4
+mass = 0.04
+physics_material_override = SubResource("PhysicsMaterial_1ptyw")
+gravity_scale = 0.5
+script = ExtResource("1_rcm3f")
+min_time = 2.4
+max_time = 6.0
+nodes = [NodePath("MeshInstance3D"), NodePath("MeshInstance3D2"), NodePath("MeshInstance3D3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ddck3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_melbf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_1tyvw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_44b5v")

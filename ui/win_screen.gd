@@ -19,4 +19,5 @@ func enable_menu():
 
 
 func _on_return_pressed():
+	disable_menu()
 	Gamestate.return_mainmenu()
