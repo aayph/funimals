@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvr6p0durdnvv"]
+
+[ext_resource type="Script" path="res://scripts/meeple.gd" id="1_b1er5"]
+[ext_resource type="PackedScene" uid="uid://dgnptplwx5jpq" path="res://icons/emoji.tscn" id="2_5nfpd"]
+[ext_resource type="PackedScene" uid="uid://bo8a5al71nr0u" path="res://units/meeple_visual.tscn" id="3_kl2tq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ql3g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkpat"]
+
+[node name="Meeple" type="CharacterBody3D" node_paths=PackedStringArray("area")]
+collision_layer = 2
+slide_on_ceiling = false
+floor_stop_on_slope = false
+platform_wall_layers = 15
+script = ExtResource("1_b1er5")
+area = NodePath("Area3D")
+direction_update_period_min = 0.7
+direction_update_period_max = 1.6
+reduction_per_second = 0.01
+base_happiness = 0.0
+speed = 4.5
+emoji = ExtResource("2_5nfpd")
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ql3g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.846714, 0)
+shape = SubResource("CapsuleShape3D_fkpat")
+
+[node name="meeple3" parent="." instance=ExtResource("3_kl2tq")]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvbed30uyt87n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1nqg"]
+bounce = 0.51
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qvm8"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jjgg6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 6, 4, 6.00001),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 5, 0, 3, 0, 2, 0, 4, 0, 5, 0, 2, 0, 0, 0, 4, 0, 5, 0, 1, 0, 3, 0, 5, 0, 0, 0, 1, 0, 5, 0, 4, 0, 0, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 195, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 195, 30, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r4efq"]
+resource_name = "cornerColliderRamp_Cube_031"
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 6, 4, 6.00001),
+"attribute_data": PackedByteArray(255, 95, 255, 255, 255, 31, 255, 63, 255, 95, 0, 0, 255, 159, 176, 199, 255, 223, 78, 120, 255, 159, 78, 56, 255, 95, 255, 191, 255, 31, 255, 127, 255, 95, 255, 191, 255, 159, 255, 191, 255, 159, 255, 191, 255, 223, 255, 127, 255, 95, 255, 127, 255, 95, 255, 127, 255, 95, 255, 127, 196, 178, 137, 165, 196, 178, 137, 165, 196, 178, 137, 165),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 9, 0, 3, 0, 0, 0, 6, 0, 9, 0, 8, 0, 15, 0, 10, 0, 8, 0, 13, 0, 15, 0, 7, 0, 1, 0, 12, 0, 16, 0, 4, 0, 11, 0, 17, 0, 2, 0, 5, 0, 17, 0, 14, 0, 2, 0),
+"material": SubResource("StandardMaterial3D_6qvm8"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 254, 255, 87, 237, 0, 0, 255, 255, 195, 30, 84, 213, 0, 0, 255, 255, 195, 30, 59, 218, 0, 0, 255, 255, 195, 30, 128, 195, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 59, 218, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 232, 241, 195, 30, 255, 255, 0, 0, 255, 255, 195, 30, 255, 255, 0, 0, 59, 218, 195, 30, 255, 255, 0, 0, 210, 223, 84, 213, 84, 213, 0, 0, 255, 127, 95, 39, 242, 15, 84, 213, 84, 213, 138, 210, 22, 37, 142, 202, 23, 13, 84, 213, 84, 213, 0, 0, 255, 127, 19, 180, 234, 203, 84, 213, 84, 213, 255, 191, 255, 191, 138, 210, 22, 37, 0, 0, 255, 127, 138, 178, 115, 205, 133, 37, 26, 18, 35, 186, 219, 197, 138, 210, 22, 37, 129, 45, 204, 8)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jjgg6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vmqd"]
+size = Vector3(10.0539, 5.491, 8.18478)
+
+[node name="cornerColliderRamp" type="RigidBody3D"]
+mass = 11.0
+physics_material_override = SubResource("PhysicsMaterial_i1nqg")
+freeze = true
+freeze_mode = 1
+
+[node name="cornerColliderRamp_001" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_r4efq")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.707107, 0.525483, 0.473147, 0, 0.669131, -0.743145, -0.707107, 0.525483, 0.473147, 0.404623, -0.193517, 0.458787)
+shape = SubResource("BoxShape3D_8vmqd")

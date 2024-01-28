@@ -86,11 +86,9 @@ func register_meeple(meeple: Meeple):
 
 func register_animal(animal: Animal):
 	animalList.append(animal)
-	print_debug(animal)
 
 func unregister_animal(animal: Animal):
 	animalList.erase(animal)
-	print_debug(animalList.size(), can_build_spawner(), activeSpawners.size())
 	if (animalList.size() == 0 && !can_build_spawner() && activeSpawners.size() == 0):
 		loose_level()
 

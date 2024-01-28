@@ -172,8 +172,7 @@ mesh = SubResource("ArrayMesh_qqqsr")
 skeleton = NodePath("")
 
 [node name="Attractor" parent="." instance=ExtResource("1_pk00l")]
-base_strength = 0.5
-happiness_influence = 0.1
+base_strength = 0.2
 max_distance = 25.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

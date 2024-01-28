@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends RigidBody3D
 class_name Meeple
 
 @export var area: Area3D
@@ -51,6 +51,8 @@ func init():
 	var close_objects := area.get_overlapping_bodies()
 	forced_direction = get_forced_direction(close_objects)
 	wanted_direction = Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)).normalized()
+	set_constant_force((forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2) * speed)
+	look_at(forced_direction + wanted_direction + transform.origin)
 
 func _process(delta: float) -> void:
 	timer -= delta
@@ -67,23 +69,20 @@ func _process(delta: float) -> void:
 		forced_direction = get_forced_direction(close_objects)
 		wanted_direction = Vector3(clampf(wanted_direction.x + randf_range(-1.0, 1.0) * 0.8, -0.5, 0.5),
 		 0, clampf(wanted_direction.z + randf_range(-1.0, 1.0) * 0.8, -0.5, 0.5))
+		set_constant_force((forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2) * speed)
 		look_at(forced_direction + wanted_direction + transform.origin)
 
-
-func _physics_process(_delta: float) -> void:
-	velocity = (forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2) * speed
-	move_and_slide()
 
 func get_forced_direction(objects: Array[Node3D]) -> Vector3:
 	var direction := Vector3.ZERO
 	for o in objects:
 		for c in o.get_children():
 			if c.has_method("get_repell_strength"):
-				var strength = c.get_repell_strength(transform.origin, happiness)
-				direction += transform.origin.direction_to(o.transform.origin) * strength
+				var strength = c.get_repell_strength(global_position, happiness)
+				direction -= global_position.direction_to(o.global_position).normalized() * strength
 			if c.has_method("get_attraction_strength"):
-				var strength = c.get_attraction_strength(transform.origin, happiness)
-				direction -= transform.origin.direction_to(o.transform.origin) * strength
+				var strength = c.get_attraction_strength(global_position, happiness)
+				direction += global_position.direction_to(o.global_position).normalized() * strength
 
 	direction.y = 0.0
 	return direction
