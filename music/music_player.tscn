@@ -7,22 +7,23 @@
 
 [node name="MusicPlayer" type="Node" node_paths=PackedStringArray("stream_a", "stream_b", "stream_c")]
 script = ExtResource("1_ey77x")
-stream_a = NodePath("")
-stream_b = NodePath("")
-stream_c = NodePath("")
+stream_a = NodePath("Level1")
+stream_b = NodePath("Level2")
+stream_c = NodePath("Level3")
 
 [node name="Level1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_r8ypm")
+volume_db = -50.0
 autoplay = true
 
 [node name="Level2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nrebo")
-volume_db = -80.0
+volume_db = -50.0
 autoplay = true
 
 [node name="Level3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bsgha")
-volume_db = -80.0
+volume_db = -50.0
 autoplay = true
 
 [connection signal="finished" from="Level1" to="." method="_on_level_1_finished"]

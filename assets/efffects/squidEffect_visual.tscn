@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://x88fj8f4chae"]
 
-[ext_resource type="PackedScene" uid="uid://buwjdiux3tx3x" path="res://assets/efffects/squidEffect.glb" id="1_grchh"]
+[ext_resource type="PackedScene" uid="uid://c4n3dxyll7eyb" path="res://assets/efffects/squidEffect.glb" id="1_grchh"]
 [ext_resource type="Script" path="res://assets/efffects/squidEffect_visual.gd" id="2_ksteh"]
 [ext_resource type="Shader" uid="uid://cxpr214akapes" path="res://assets/efffects/squidEffect_visual.tres" id="2_w81vl"]
-[ext_resource type="Texture2D" uid="uid://dlrudlp1tr77m" path="res://textures/effects/beamBlur.png" id="3_e8m4u"]
+[ext_resource type="Texture2D" uid="uid://cyeskt5xv2hcn" path="res://textures/effects/beamBlur.png" id="3_e8m4u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cix3d"]
 render_priority = 0

@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=27 format=3 uid="uid://cxpr214akapes"]
 
-[ext_resource type="Texture2D" uid="uid://dlrudlp1tr77m" path="res://textures/effects/beamBlur.png" id="1_w4ahn"]
+[ext_resource type="Texture2D" uid="uid://cyeskt5xv2hcn" path="res://textures/effects/beamBlur.png" id="1_w4ahn"]
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_tg6o1"]
 constant = 0.6

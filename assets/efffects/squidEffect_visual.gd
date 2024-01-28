@@ -12,14 +12,14 @@ func _ready():
 	squid = squidSplatter.get_parent_node_3d()
 	squid.splatter.connect(_activate)
 	materialOverride = get_surface_override_material(0) as ShaderMaterial
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (visible):
 		shaderParameter -= delta
 		squidTrailFade -= delta
-		
+
 		if (shaderParameter>-1):
 			set_instance_shader_parameter("FloatParameter", shaderParameter)
 			set_instance_shader_parameter("FloatParameter2", shaderParameter)
@@ -31,7 +31,7 @@ func _process(delta):
 			#set_instance_shader_parameter("squidTrailFade", 1)
 		if (shaderParameter < -2):
 			squidSplatter.queue_free()
-		
+
 
 
 
