@@ -65,12 +65,11 @@ func get_loose_value() -> float:
 	return Data.DeathValue
 
 func loose_level():
-	change_state.emit(StateChange.LEVEL_WIN)
+	change_state.emit(StateChange.LEVEL_LOOSE)
 	return_mainmenu()
 
 func win_level():
-	change_state.emit(StateChange.LEVEL_LOOSE)
-	return_mainmenu()
+	change_state.emit(StateChange.LEVEL_WIN)
 
 func return_mainmenu():
 	change_state.emit(StateChange.MAIN_MENU)
