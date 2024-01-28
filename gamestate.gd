@@ -66,6 +66,8 @@ func get_relative_happiness() -> float:
 	return abs(_total_happiness / MeepleList.size())
 
 func get_relative_win_happiness() -> float:
+	if Data.WinValue <= 0 || Data.WinValue == null || MeepleList.size() == 0:
+		return 0.0
 	return abs(_total_happiness / MeepleList.size()) / Data.WinValue
 
 func get_win_value() -> float:
