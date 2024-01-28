@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7r18odt0vt1m"]
+[gd_scene load_steps=6 format=3 uid="uid://c7r18odt0vt1m"]
 
 [ext_resource type="PackedScene" uid="uid://b47t2jx4i8pnf" path="res://ui/BuildButton.tscn" id="2_1be3d"]
 [ext_resource type="PackedScene" uid="uid://ig3rsxuv8mpf" path="res://assets/gameplay/FloorSpawnerPreview.tscn" id="3_ilh8o"]
 [ext_resource type="PackedScene" uid="uid://bhnia2f82vf5o" path="res://assets/gameplay/HamsterSpawner.tscn" id="3_t2tbv"]
 [ext_resource type="PackedScene" uid="uid://b186sgssn3x3x" path="res://assets/gameplay/PufferfishSpawner.tscn" id="4_prihp"]
+[ext_resource type="PackedScene" uid="uid://bb7ocyssy65d" path="res://assets/gameplay/SquidSpawner.tscn" id="5_o25he"]
 
 [node name="BuildMenu" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -31,17 +32,13 @@ layout_mode = 2
 spawnerPreview = ExtResource("3_ilh8o")
 spawner = ExtResource("4_prihp")
 
-[node name="BuildButton3" parent="VBoxContainer" node_paths=PackedStringArray("label", "price") instance=ExtResource("2_1be3d")]
+[node name="BuildButton3" parent="VBoxContainer" instance=ExtResource("2_1be3d")]
 layout_mode = 2
-label = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Label")
-price = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Price")
+spawnerPreview = ExtResource("3_ilh8o")
+spawner = ExtResource("5_o25he")
 
-[node name="BuildButton4" parent="VBoxContainer" node_paths=PackedStringArray("label", "price") instance=ExtResource("2_1be3d")]
+[node name="BuildButton5" parent="VBoxContainer" instance=ExtResource("2_1be3d")]
 layout_mode = 2
-label = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Label")
-price = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Price")
 
-[node name="BuildButton5" parent="VBoxContainer" node_paths=PackedStringArray("label", "price") instance=ExtResource("2_1be3d")]
+[node name="BuildButton4" parent="VBoxContainer" instance=ExtResource("2_1be3d")]
 layout_mode = 2
-label = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Label")
-price = NodePath("../BuildButton2/PanelContainer/VBoxContainer/Price")

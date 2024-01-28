@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb7ocyssy65d"]
+
+[ext_resource type="Script" path="res://assets/gameplay/FloorSpawner.gd" id="1_yjn1i"]
+[ext_resource type="PackedScene" uid="uid://2g23qtidm065" path="res://squid.tscn" id="2_nc3uo"]
+[ext_resource type="PackedScene" uid="uid://jailfvb63y8m" path="res://assets/gameplay/portal_visual.tscn" id="3_y4bst"]
+
+[node name="SquidSpawner" type="Node3D"]
+script = ExtResource("1_yjn1i")
+interval = 3.0
+spawns = 4
+upVelocity = 10.0
+forwardVelocity = 5.0
+enemy = ExtResource("2_nc3uo")
+
+[node name="portal2" parent="." instance=ExtResource("3_y4bst")]

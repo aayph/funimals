@@ -12,12 +12,14 @@ var current_state: StateChange = StateChange.MAIN_MENU
 var SpawnerCosts: Dictionary = {
 	"BasicSpawner": 100,
 	"PufferfishSpawner": 150,
-	"HamsterSpawner": 50
+	"HamsterSpawner": 50,
+	"SquidSpawner": 80
 }
 var SpawnerDisplayNames: Dictionary = {
 	"BasicSpawner": "Test",
 	"PufferfishSpawner": "Pufferfish",
-	"HamsterSpawner": "Hamster"
+	"HamsterSpawner": "Hamster",
+	"SquidSpawner": "Squid"
 }
 
 signal money_changed(money_added:float, total_money: float)
