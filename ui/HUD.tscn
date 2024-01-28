@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb6yyboukigia"]
+[gd_scene load_steps=11 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
 [ext_resource type="Texture2D" uid="uid://djo7ovrjc6dhs" path="res://icons/UI/buttonBasic_noborder.png" id="2_cku8g"]
@@ -8,6 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b5xd4jbgojh77" path="res://icons/UI/buttonBasicPressed_noborder.png" id="3_17qm6"]
 [ext_resource type="Texture2D" uid="uid://cmvtepyhaagbm" path="res://icons/UI/buttonBasicDisabled_noborder.png" id="4_f608a"]
 [ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kux10"]
+bg_color = Color(0, 0, 0, 0.498039)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.72549)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hj88"]
 font_size = 30
@@ -22,6 +27,48 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_8dq6v")
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kux10")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="MoneyDisplay" parent="PanelContainer/MarginContainer" instance=ExtResource("2_qlw6x")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0 Meeps"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="HappinessDisplay" parent="PanelContainer/MarginContainer2" instance=ExtResource("4_tq2cl")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
@@ -29,9 +76,9 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_filter = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 10
 
 [node name="Button" type="TextureButton" parent="MarginContainer3"]
 custom_minimum_size = Vector2(150, 70)
@@ -58,42 +105,5 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 label_settings = SubResource("LabelSettings_0hj88")
-
-[node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="MoneyDisplay" parent="MarginContainer" instance=ExtResource("2_qlw6x")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "0 Meeps"
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="HappinessDisplay" parent="MarginContainer2" instance=ExtResource("4_tq2cl")]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "0 Meepiness"
 
 [connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_quit_pressed"]
