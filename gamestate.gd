@@ -61,7 +61,7 @@ func _start_level(data: LevelData):
 	change_state.emit(StateChange.LEVEL_START)
 
 func get_relative_happiness() -> float:
-	return _total_happiness / MeepleList.size()
+	return abs(_total_happiness / MeepleList.size())
 
 func get_win_value() -> float:
 	return Data.WinValue

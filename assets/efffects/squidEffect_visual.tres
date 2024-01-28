@@ -1,6 +1,6 @@
-[gd_resource type="VisualShader" load_steps=22 format=3 uid="uid://cxpr214akapes"]
+[gd_resource type="VisualShader" load_steps=27 format=3 uid="uid://cxpr214akapes"]
 
-[ext_resource type="Texture2D" uid="uid://dlrudlp1tr77m" path="res://textures/effects/beamBlur.png" id="1_w4ahn"]
+[ext_resource type="Texture2D" uid="uid://du6u6etrurxwy" path="res://textures/effects/beamBlur.png" id="1_w4ahn"]
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_tg6o1"]
 constant = 0.6
@@ -22,9 +22,25 @@ parameter_name = "ColorParameter"
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_6qqa8"]
 operator = 2
 
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_cep32"]
+expanded_output_ports = [0]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_kc347"]
+parameter_name = "squidTrailFade"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_tnumr"]
+
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_i5tr8"]
 expanded_output_ports = [0]
 input_name = "uv"
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_ou6yq"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_0wjde"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6np88"]
 output_port_for_preview = 0
@@ -85,6 +101,7 @@ uniform float FloatParameter = 0.60000002384186;
 uniform sampler2D Texture2DParameter : source_color, repeat_disable;
 uniform float FloatParameter2 = 0.60000002384186;
 uniform sampler2D Texture2DParameter2 : source_color, repeat_disable;
+uniform float squidTrailFade = 1;
 uniform vec4 ColorParameter : source_color;
 
 
@@ -158,6 +175,44 @@ void fragment() {
 	n_out7p0 = texture(Texture2DParameter2, n_out9p0);
 
 
+// Input:17
+	vec2 n_out17p0 = UV;
+	float n_out17p2 = n_out17p0.g;
+
+
+// FloatParameter:18
+	float n_out18p0 = squidTrailFade;
+
+
+// FloatOp:19
+	float n_out19p0 = n_out17p2 + n_out18p0;
+
+
+	vec3 n_out20p0;
+// If:20
+	float n_in20p1 = 1.00000;
+	float n_in20p2 = 0.00001;
+	vec3 n_in20p4 = vec3(0.00000, 0.00000, 0.00000);
+	if(abs(n_out19p0 - n_in20p1) < n_in20p2)
+	{
+		n_out20p0 = vec3(n_out19p0);
+	}
+	else if(n_out19p0 < n_in20p1)
+	{
+		n_out20p0 = vec3(n_out19p0);
+	}
+	else
+	{
+		n_out20p0 = n_in20p4;
+	}
+
+
+// Clamp:21
+	float n_in21p1 = 0.00000;
+	float n_in21p2 = 1.00000;
+	float n_out21p0 = clamp(n_out20p0.x, n_in21p1, n_in21p2);
+
+
 // Input:2
 	vec2 n_out2p0 = UV;
 	float n_out2p2 = n_out2p0.g;
@@ -173,12 +228,13 @@ void fragment() {
 
 // Output:0
 	ALBEDO = vec3(n_out7p0.xyz);
-	ALPHA = n_out7p0.x;
+	ALPHA = n_out21p0;
 	EMISSION = n_out16p0;
 
 
 }
 "
+graph_offset = Vector2(-872.798, -84.8639)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_dks7i")
 nodes/vertex/2/position = Vector2(-2040, 100)
 nodes/vertex/4/node = SubResource("VisualShaderNodeVectorOp_yo8kp")
@@ -220,4 +276,14 @@ nodes/fragment/14/node = SubResource("VisualShaderNodeColorParameter_p0w1o")
 nodes/fragment/14/position = Vector2(-580, 720)
 nodes/fragment/16/node = SubResource("VisualShaderNodeVectorOp_6qqa8")
 nodes/fragment/16/position = Vector2(-200, 380)
-nodes/fragment/connections = PackedInt32Array(3, 2, 8, 0, 8, 0, 9, 1, 3, 1, 9, 0, 12, 0, 8, 1, 11, 0, 7, 2, 9, 0, 7, 0, 7, 0, 0, 1, 2, 2, 16, 0, 14, 0, 16, 1, 7, 0, 0, 0, 16, 0, 0, 5)
+nodes/fragment/17/node = SubResource("VisualShaderNodeInput_cep32")
+nodes/fragment/17/position = Vector2(-800, -100)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFloatParameter_kc347")
+nodes/fragment/18/position = Vector2(-800, 20)
+nodes/fragment/19/node = SubResource("VisualShaderNodeFloatOp_tnumr")
+nodes/fragment/19/position = Vector2(-400, -20)
+nodes/fragment/20/node = SubResource("VisualShaderNodeIf_ou6yq")
+nodes/fragment/20/position = Vector2(-100, -60)
+nodes/fragment/21/node = SubResource("VisualShaderNodeClamp_0wjde")
+nodes/fragment/21/position = Vector2(140, -20)
+nodes/fragment/connections = PackedInt32Array(3, 2, 8, 0, 8, 0, 9, 1, 3, 1, 9, 0, 12, 0, 8, 1, 11, 0, 7, 2, 9, 0, 7, 0, 2, 2, 16, 0, 14, 0, 16, 1, 7, 0, 0, 0, 16, 0, 0, 5, 18, 0, 19, 1, 17, 2, 19, 0, 19, 0, 20, 0, 19, 0, 20, 5, 19, 0, 20, 3, 20, 0, 21, 0, 21, 0, 0, 1)

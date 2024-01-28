@@ -1,10 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb34itqux33u1"]
+[gd_scene load_steps=5 format=3 uid="uid://bb34itqux33u1"]
 
 [ext_resource type="Script" path="res://ui/HappinessDisplay.gd" id="1_3eebq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgcw3"]
+bg_color = Color(0, 0, 0, 0.188235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xh3v"]
+bg_color = Color(0.105882, 0.643137, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.52549, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_ha2mk"]
 font_size = 30
 
-[node name="HappinessDisplay" type="Label"]
-label_settings = SubResource("LabelSettings_ha2mk")
+[node name="HapinessProgress" type="PanelContainer" node_paths=PackedStringArray("label", "progress")]
+custom_minimum_size = Vector2(500, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgcw3")
 script = ExtResource("1_3eebq")
+label = NodePath("Label")
+progress = NodePath("Progress")
+
+[node name="Progress" type="Panel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7xh3v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0123"
+label_settings = SubResource("LabelSettings_ha2mk")
