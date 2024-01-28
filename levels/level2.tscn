@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj5qjrydyy4p2"]
+[gd_scene load_steps=10 format=3 uid="uid://cj5qjrydyy4p2"]
 
 [ext_resource type="PackedScene" uid="uid://odk5pljsuc76" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="2_kupl4"]
@@ -7,7 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="5_ggnkc"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="6_swwch"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_asj27"]
+sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
+sky_horizon_color = Color(0.827451, 0.552941, 0.737255, 1)
+ground_bottom_color = Color(0.380392, 0.2, 0.298039, 1)
+ground_horizon_color = Color(0.827451, 0.552941, 0.737255, 1)
+
+[sub_resource type="Sky" id="Sky_6anwr"]
+sky_material = SubResource("ProceduralSkyMaterial_asj27")
+
+[sub_resource type="Environment" id="Environment_no16k"]
+background_mode = 2
+sky = SubResource("Sky_6anwr")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Level2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_no16k")
 
 [node name="Floor02" parent="." instance=ExtResource("1_kuw04")]
 
