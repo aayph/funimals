@@ -5,7 +5,7 @@ func _ready() -> void:
 	Gamestate.change_state.connect(_on_state_change)
 
 func _on_state_change(new_state: Gamestate.StateChange):
-	if new_state == Gamestate.StateChange.LEVEL_LOOSE:
+	if new_state == Gamestate.StateChange.LEVEL_WIN:
 		enable_menu()
 	else:
 		disable_menu()

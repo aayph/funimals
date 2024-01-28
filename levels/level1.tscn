@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8pktdq3p8gjw" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="6_15e35"]
-[ext_resource type="PackedScene" uid="uid://dvbed30uyt87n" path="res://assets/gameplay/corner_collider_ramp.tscn" id="7_m5fve"]
+[ext_resource type="PackedScene" path="res://assets/gameplay/corner_collider_ramp.tscn" id="7_m5fve"]
 [ext_resource type="PackedScene" uid="uid://ce8kxmiromtpc" path="res://assets/gameplay/Meadow.tscn" id="8_xukc3"]
 [ext_resource type="PackedScene" uid="uid://bmxgrxxb50w7e" path="res://music/music_player.tscn" id="9_8knyr"]
 

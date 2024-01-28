@@ -76,7 +76,6 @@ func get_loose_value() -> float:
 
 func loose_level():
 	change_state.emit(StateChange.LEVEL_LOOSE)
-	return_mainmenu()
 
 func win_level():
 	change_state.emit(StateChange.LEVEL_WIN)

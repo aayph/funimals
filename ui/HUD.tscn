@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://cb6yyboukigia"]
 
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_8dq6v"]
-[ext_resource type="Texture2D" uid="uid://djo7ovrjc6dhs" path="res://icons/UI/buttonBasic_noborder.png" id="2_cku8g"]
 [ext_resource type="PackedScene" uid="uid://crndyons7hfbh" path="res://ui/MoneyDisplay.tscn" id="2_qlw6x"]
 [ext_resource type="PackedScene" uid="uid://c7r18odt0vt1m" path="res://ui/BuildMenu.tscn" id="2_uy4rd"]
-[ext_resource type="Texture2D" uid="uid://i4hn77nvtlxe" path="res://icons/UI/buttonBasicHover_noborder.png" id="3_6lv3y"]
-[ext_resource type="Texture2D" uid="uid://b5xd4jbgojh77" path="res://icons/UI/buttonBasicPressed_noborder.png" id="3_17qm6"]
-[ext_resource type="Texture2D" uid="uid://cmvtepyhaagbm" path="res://icons/UI/buttonBasicDisabled_noborder.png" id="4_f608a"]
+[ext_resource type="Texture2D" uid="uid://c3o3nv4qt1e75" path="res://icons/UI/buttonBasicSmall.png" id="4_nsrut"]
 [ext_resource type="PackedScene" uid="uid://bb34itqux33u1" path="res://ui/HappinessDisplay.tscn" id="4_tq2cl"]
+[ext_resource type="Texture2D" uid="uid://ded5p8w4f6enh" path="res://icons/UI/buttonBasicSmallPressed.png" id="5_knymg"]
+[ext_resource type="Texture2D" uid="uid://76xblibsf2ed" path="res://icons/UI/buttonBasicSmallHover.png" id="6_obhj4"]
+[ext_resource type="Texture2D" uid="uid://bftgem0t3tii2" path="res://icons/UI/buttonBasicSmallDisabled.png" id="7_wo4hi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kux10"]
 bg_color = Color(0, 0, 0, 0.498039)
@@ -78,10 +78,10 @@ theme_override_constants/margin_bottom = 10
 [node name="Button" type="TextureButton" parent="PanelContainer/MarginContainer3"]
 custom_minimum_size = Vector2(150, 55)
 layout_mode = 2
-texture_normal = ExtResource("2_cku8g")
-texture_pressed = ExtResource("3_17qm6")
-texture_hover = ExtResource("3_6lv3y")
-texture_disabled = ExtResource("4_f608a")
+texture_normal = ExtResource("4_nsrut")
+texture_pressed = ExtResource("5_knymg")
+texture_hover = ExtResource("6_obhj4")
+texture_disabled = ExtResource("7_wo4hi")
 ignore_texture_size = true
 stretch_mode = 0
 
