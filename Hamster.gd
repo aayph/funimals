@@ -15,7 +15,7 @@ func _ready():
 	body_entered.connect(_change_direction)
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	set_inertia(Vector3(1000, 10000, 10000))
 
 

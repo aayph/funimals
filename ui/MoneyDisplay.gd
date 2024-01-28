@@ -6,6 +6,6 @@ func _ready():
 	var gameState = get_node("/root/Gamestate")
 	gameState.connect("money_changed", onMoneyChanged)
 
-func onMoneyChanged(money_added: float, total_money: float):
+func onMoneyChanged(_money_added: float, total_money: float):
 	text = ("%.0f" % total_money) + " Meeps"
 

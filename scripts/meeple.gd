@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 		 0, clampf(wanted_direction.z + randf_range(-1.0, 1.0) * 0.8, -0.5, 0.5))
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = (forced_direction + wanted_direction + Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)) * 0.2) * speed
 	move_and_slide()
 

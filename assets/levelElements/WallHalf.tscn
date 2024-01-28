@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://byojyg8y00cx3"]
+[gd_scene load_steps=4 format=3 uid="uid://cpkrv4eer3hv7"]
 
-[ext_resource type="PackedScene" uid="uid://b2ecws303klgn" path="res://assets/levelElements/wallHalf.glb" id="1_nbt37"]
+[ext_resource type="PackedScene" uid="uid://dp1e47s5l3wwf" path="res://assets/levelElements/wallHalf.glb" id="1_nbt37"]
 [ext_resource type="PackedScene" uid="uid://danavhklaydja" path="res://objects/repeller.tscn" id="2_ynjlt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xriq2"]

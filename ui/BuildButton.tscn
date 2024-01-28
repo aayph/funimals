@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b47t2jx4i8pnf"]
 
-[ext_resource type="Texture2D" uid="uid://djo7ovrjc6dhs" path="res://icons/UI/buttonBasic_noborder.png" id="1_5trl0"]
+[ext_resource type="Texture2D" uid="uid://c1e7hoblhl7ni" path="res://icons/UI/buttonBasic_noborder.png" id="1_5trl0"]
 [ext_resource type="Script" path="res://ui/BuildButton.gd" id="1_qbcqv"]
-[ext_resource type="Texture2D" uid="uid://i4hn77nvtlxe" path="res://icons/UI/buttonBasicHover_noborder.png" id="2_8v87l"]
+[ext_resource type="Texture2D" uid="uid://daebusjqvn33j" path="res://icons/UI/buttonBasicHover_noborder.png" id="2_8v87l"]
 
 [node name="BuildButton" type="TextureButton" node_paths=PackedStringArray("label", "price")]
 offset_right = 328.0

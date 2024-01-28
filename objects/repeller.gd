@@ -6,7 +6,7 @@ class_name Repeller
 @export var max_distance: float = 20.0
 @export var distance_influence: float = 0.0
 
-func get_repell_strength(position: Vector3, happiness: float = 0.0) -> float:
+func get_repell_strength(_position: Vector3, happiness: float = 0.0) -> float:
 	var strength := base_strength
 	strength += happiness_influence * happiness
 	var distance = transform.origin.distance_to(position)

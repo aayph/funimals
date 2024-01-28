@@ -19,9 +19,6 @@ func _ready():
 	gameState.connect("activateBuildMode", onBuildModeActivated)
 	directionIndicator = get_node("DirectionIndicator")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _input(event):
 	if (event is InputEventMouseMotion && buildModeActive && currentSpawnerPreview != null):
@@ -50,20 +47,20 @@ func _input(event):
 				selectDirectionModeActive = false
 				if (currentSpawnerFactory != null && level != null):
 					directionIndicator.hide()
-					
+
 					var hitPosition = getHitPosition(floorCollisionMask)
 					var direction: Vector2 = Vector2(1, 0)
-					
+
 					if (hitPosition != null):
 						var diff = hitPosition - currentSpawnerPreview.transform.origin
 						direction = Vector2(diff.x, diff.z).normalized()
-					
+
 					gameState.add_money(-gameState.SpawnerCosts[currentSpawnerFactory.getSpawnerId()])
 					var newSpawner: Spawner = currentSpawnerFactory.createSpawner(direction, level)
 					newSpawner.transform = currentSpawnerPreview.transform
 					level.add_child(newSpawner)
 				clearPreview()
-		
+
 func onBuildModeActivated(factory: SpawnerBuilderFactory):
 	if (level != null):
 		buildModeActive = true
@@ -83,13 +80,13 @@ func getHitPosition(mask: int):
 		var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 		var ray_origin: Vector3 = camera.project_ray_origin(mouse_pos)
 		var ray_direction: Vector3 = camera.project_ray_normal(mouse_pos) * 1000.0
-		
+
 		var space_state: PhysicsDirectSpaceState3D = level.get_world_3d().direct_space_state
 		var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_origin, ray_direction, mask)
 		query.exclude = [currentSpawnerPreview]
 		var hit: Dictionary = space_state.intersect_ray(query)
 		if (hit.size() > 0):
 			return hit.position
-			
+
 	return null
 

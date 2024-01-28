@@ -4,10 +4,10 @@ class_name SpawnerBuilderFactory
 var preview: PackedScene
 var spawner: PackedScene
 
-func _init(preview: PackedScene, spawner: PackedScene):
-	self.preview = preview
-	self.spawner = spawner
-	
+func _init(_preview: PackedScene, _spawner: PackedScene):
+	self.preview = _preview
+	self.spawner = _spawner
+
 func createPreview() -> Node3D:
 	return preview.instantiate()
 

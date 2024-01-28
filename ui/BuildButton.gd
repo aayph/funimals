@@ -17,17 +17,13 @@ func _ready():
 	price.text = ("%d" % gameState.SpawnerCosts[spawnerId]) + " Meeps"
 	updateIsEnabled()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func onClick():
 	gameState = get_node("/root/Gamestate")
 	var factory = SpawnerBuilderFactory.new(spawnerPreview, spawner)
 	gameState.activateBuildMode.emit(factory)
-	
-func onMoneyChanged(money_added:float, total_money: float):
+
+func onMoneyChanged(_money_added:float, _total_money: float):
 	updateIsEnabled()
-	
+
 func updateIsEnabled():
 	disabled = gameState.Money < gameState.SpawnerCosts[spawnerId]

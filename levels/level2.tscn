@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj5qjrydyy4p2"]
 
-[ext_resource type="PackedScene" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
+[ext_resource type="PackedScene" uid="uid://odk5pljsuc76" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
 [ext_resource type="PackedScene" uid="uid://b7jmm6hwopybk" path="res://assets/levelElements/Wall.tscn" id="2_kupl4"]
-[ext_resource type="PackedScene" path="res://assets/levelElements/WallHalf.tscn" id="3_2h63y"]
-[ext_resource type="PackedScene" path="res://assets/levelElements/WallPillar.tscn" id="4_ibsen"]
+[ext_resource type="PackedScene" uid="uid://cpkrv4eer3hv7" path="res://assets/levelElements/WallHalf.tscn" id="3_2h63y"]
+[ext_resource type="PackedScene" uid="uid://b8pktdq3p8gjw" path="res://assets/levelElements/WallPillar.tscn" id="4_ibsen"]
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="5_ggnkc"]
 
 [node name="Level2" type="Node3D"]

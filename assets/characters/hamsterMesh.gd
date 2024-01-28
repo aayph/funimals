@@ -8,11 +8,8 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _change_facing(facingVector):
 	#print(basis.x.angle_to(facingVector))
 	rotate(Vector3(0,1,0), basis.x.angle_to(facingVector))
-	
+

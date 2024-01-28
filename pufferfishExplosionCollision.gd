@@ -6,9 +6,6 @@ func _ready():
 	get_parent_node_3d().explode.connect(_enable)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _enable():
 	disabled = false

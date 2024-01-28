@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://assets/gameplay/PufferfishSpawner.gd" id="1_46w2u"]
 [ext_resource type="PackedScene" uid="uid://dmf3ymx3abp0" path="res://pufferfish.tscn" id="2_c8pgg"]
-[ext_resource type="PackedScene" uid="uid://1bmepy3ba23v" path="res://assets/gameplay/portal_visual.tscn" id="3_g2phx"]
+[ext_resource type="PackedScene" uid="uid://jailfvb63y8m" path="res://assets/gameplay/portal_visual.tscn" id="3_g2phx"]
 
 [node name="PufferfishSpawner" type="Node3D"]
 script = ExtResource("1_46w2u")

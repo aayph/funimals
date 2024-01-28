@@ -19,8 +19,8 @@ func _process(delta):
 	if (explodeTimer > 2):
 		(surfaceOverrideMaterial).set_shader_parameter("FloatParameter", 0)
 		get_parent_node_3d().queue_free()
-		
-	
+
+
 func _explode():
 	visible = true
 	explode = true

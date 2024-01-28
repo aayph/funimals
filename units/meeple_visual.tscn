@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo8a5al71nr0u"]
 
-[ext_resource type="PackedScene" uid="uid://cutaia2ferlq7" path="res://assets/characters/meeple.glb" id="1_m21t8"]
+[ext_resource type="PackedScene" uid="uid://dswlsahlo6m5w" path="res://assets/characters/meeple.glb" id="1_m21t8"]
 [ext_resource type="Script" path="res://scripts/color_changer.gd" id="2_2pnj7"]
 [ext_resource type="Shader" uid="uid://b6ud30ftga7fs" path="res://units/meeple_visual.tres" id="3_dkldu"]
 
