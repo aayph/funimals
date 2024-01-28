@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b52e8gcdq6l5f"]
 
-[ext_resource type="PackedScene" uid="uid://dqulg8r14ugju" path="res://assets/characters/hamster.glb" id="2_0fvqe"]
+[ext_resource type="PackedScene" uid="uid://bt30s0y2pf3s6" path="res://assets/characters/hamster.glb" id="2_0fvqe"]
 [ext_resource type="Script" path="res://Hamster.gd" id="2_85f4k"]
 [ext_resource type="Script" path="res://assets/characters/hamsterMesh.gd" id="3_kg6x3"]
 
@@ -10,6 +10,8 @@ height = 0.793786
 
 [node name="Hamster" type="RigidBody3D"]
 script = ExtResource("2_85f4k")
+happinessIncrease = 0.1
+life = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.123325, -2.99746, 0, 2.99746, -0.123325, 0, 0, 0, 3, 0.269561, 0.570147, 0)

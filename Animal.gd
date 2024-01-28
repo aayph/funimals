@@ -2,8 +2,8 @@ extends RigidBody3D
 
 class_name Animal
 
-var happinessIncrease: float 
-var life: float
+@export var happinessIncrease: float
+@export var life: float
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,7 +23,7 @@ func _decrease_life():
 
 
 func _increase_meeple_happiness(happinessIncrease, meeple):
-	
+
 	if (meeple.has_method("change_happiness")):
 		meeple.change_happiness(happinessIncrease);
 		return true

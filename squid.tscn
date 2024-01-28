@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_mhim4"]
 [ext_resource type="Script" path="res://squid.gd" id="2_5nldn"]
-[ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_d0jlh"]
+[ext_resource type="PackedScene" uid="uid://jjx7om100wbj" path="res://assets/characters/squid.glb" id="2_d0jlh"]
 [ext_resource type="PackedScene" uid="uid://basf1gwdab1op" path="res://squidSplatter.tscn" id="4_0fjhs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4rc1c"]
@@ -11,6 +11,8 @@ height = 2.86802
 
 [node name="Squid" instance=ExtResource("1_mhim4")]
 script = ExtResource("2_5nldn")
+happinessIncrease = 0.1
+life = 1.0
 
 [node name="Mesh" parent="." index="0" instance=ExtResource("2_d0jlh")]
 

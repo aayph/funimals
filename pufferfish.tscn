@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dmf3ymx3abp0"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://dtmv5l631a08u" path="res://assets/levelElements/NoFriction.tres" id="1_r60io"]
+[ext_resource type="PhysicsMaterial" path="res://assets/levelElements/NoFriction.tres" id="1_r60io"]
 [ext_resource type="Script" path="res://pufferfish.gd" id="2_e6kbq"]
-[ext_resource type="PackedScene" uid="uid://dyxvcmfrsnqwq" path="res://assets/characters/pufferfish.glb" id="2_t4cbb"]
+[ext_resource type="PackedScene" uid="uid://dro6c3fogbwu4" path="res://assets/characters/pufferfish.glb" id="2_t4cbb"]
 [ext_resource type="Script" path="res://assets/characters/pufferfishMesh.gd" id="4_ffoyk"]
 [ext_resource type="Script" path="res://pufferfishExplosionCollision.gd" id="5_o2bsf"]
 [ext_resource type="PackedScene" uid="uid://d3q80dmi5xptn" path="res://assets/efffects/pufferfishSplash_visual.tscn" id="6_ywku2"]
@@ -15,6 +15,8 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.209067, 0)
 physics_material_override = ExtResource("1_r60io")
 script = ExtResource("2_e6kbq")
+happinessIncrease = 0.2
+life = 3.0
 
 [node name="NormalCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.11118, 0)

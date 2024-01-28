@@ -7,9 +7,7 @@ func _ready():
 	set_contact_monitor(true)
 	set_max_contacts_reported(10)
 	body_entered.connect(_collide)
-	life = 1
-	happinessIncrease = 0.1
-	
+
 
 
 func _collide(node):
