@@ -1,20 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://b52e8gcdq6l5f"]
+[gd_scene load_steps=6 format=3 uid="uid://b52e8gcdq6l5f"]
 
 [ext_resource type="PackedScene" uid="uid://bt30s0y2pf3s6" path="res://assets/characters/hamster.glb" id="2_0fvqe"]
 [ext_resource type="Script" path="res://Hamster.gd" id="2_85f4k"]
 [ext_resource type="Script" path="res://assets/characters/hamsterMesh.gd" id="3_kg6x3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2giw"]
+friction = 0.05
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cia6y"]
 radius = 0.228692
 height = 0.793786
 
 [node name="Hamster" type="RigidBody3D"]
+mass = 3.77
+physics_material_override = SubResource("PhysicsMaterial_h2giw")
 script = ExtResource("2_85f4k")
-happinessIncrease = 0.1
+SPEED = 3000.0
+happinessIncrease = 0.2
 life = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.123325, -2.99746, 0, 2.99746, -0.123325, 0, 0, 0, 3, 0.269561, 0.570147, 0)
+transform = Transform3D(-0.123325, -2.99746, 0, 2.99746, -0.123325, 0, 0, 0, 3, 0.0423904, 0.570147, 0.00577809)
 shape = SubResource("CapsuleShape3D_cia6y")
 
 [node name="Mesh" parent="." instance=ExtResource("2_0fvqe")]

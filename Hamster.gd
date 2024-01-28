@@ -2,7 +2,7 @@ extends Animal
 
 signal change_facing(FacingVector)
 
-const SPEED = 300.0
+@export var SPEED = 300.0
 var xDirection: float = randf_range(-1, 1)
 var zDirection: float = randf_range(-1, 1)
 var lastCollision
@@ -18,7 +18,6 @@ func _ready():
 func _physics_process(delta):
 	set_inertia(Vector3(1000, 10000, 10000))
 
-	apply_force(Vector3(xDirection, 0, zDirection).normalized() * SPEED)
 
 func _change_direction(node):
 
@@ -61,3 +60,4 @@ func _change_direction(node):
 		else:
 			xDirection = (xDirection * -1) + randf_range(-0.1, -5 * sign(xDirection))
 
+	apply_force(Vector3(xDirection, 0, zDirection).normalized() * SPEED)

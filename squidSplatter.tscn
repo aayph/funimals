@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bugs1c8eqn4df" path="res://animal.tscn" id="1_6k5tp"]
 [ext_resource type="Script" path="res://squidSplatter.gd" id="2_ixi7l"]
-[ext_resource type="PackedScene" uid="uid://bs526dvt7lvbw" path="res://assets/characters/squid.glb" id="2_sstpl"]
+[ext_resource type="PackedScene" uid="uid://jjx7om100wbj" path="res://assets/characters/squid.glb" id="2_sstpl"]
 [ext_resource type="PackedScene" uid="uid://x88fj8f4chae" path="res://assets/efffects/squidEffect_visual.tscn" id="3_7pief"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oplsr"]
