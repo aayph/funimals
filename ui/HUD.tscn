@@ -29,7 +29,7 @@ script = ExtResource("1_8dq6v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 8
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_kux10")
 
@@ -52,8 +52,8 @@ text = "0 Meeps"
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
@@ -64,12 +64,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer3" type="MarginContainer" parent="."]
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -80,8 +75,8 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 10
 
-[node name="Button" type="TextureButton" parent="MarginContainer3"]
-custom_minimum_size = Vector2(150, 70)
+[node name="Button" type="TextureButton" parent="PanelContainer/MarginContainer3"]
+custom_minimum_size = Vector2(150, 55)
 layout_mode = 2
 texture_normal = ExtResource("2_cku8g")
 texture_pressed = ExtResource("3_17qm6")
@@ -90,7 +85,7 @@ texture_disabled = ExtResource("4_f608a")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="MarginContainer3/Button"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer3/Button"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,4 +101,9 @@ grow_vertical = 2
 text = "Quit"
 label_settings = SubResource("LabelSettings_0hj88")
 
-[connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_quit_pressed"]
+[node name="BuildMenu" parent="." instance=ExtResource("2_uy4rd")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="PanelContainer/MarginContainer3/Button" to="." method="_on_quit_pressed"]

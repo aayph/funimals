@@ -1,27 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://s7ktxprbqvns"]
+[gd_scene load_steps=7 format=3 uid="uid://s7ktxprbqvns"]
 
 [ext_resource type="Script" path="res://scripts/meeple.gd" id="1_1eyr5"]
+[ext_resource type="PackedScene" uid="uid://dgnptplwx5jpq" path="res://icons/emoji.tscn" id="2_5aaot"]
 [ext_resource type="PackedScene" uid="uid://bo8a5al71nr0u" path="res://units/meeple_visual.tscn" id="2_43dxg"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wxood"]
+bounce = 0.04
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ql3g"]
+radius = 10.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fkpat"]
 
-[node name="Meeple" type="CharacterBody3D" node_paths=PackedStringArray("area")]
+[node name="Meeple" type="RigidBody3D" node_paths=PackedStringArray("area")]
 collision_layer = 2
+mass = 5.0
+physics_material_override = SubResource("PhysicsMaterial_wxood")
+lock_rotation = true
 script = ExtResource("1_1eyr5")
 area = NodePath("Area3D")
-direction_update_period_min = 0.7
-direction_update_period_max = 1.6
+direction_update_period_min = 0.2
+direction_update_period_max = 0.5
 reduction_per_second = 0.01
 base_happiness = 0.0
-speed = 4.5
+speed = 100.0
+emoji = ExtResource("2_5aaot")
 
 [node name="Area3D" type="Area3D" parent="."]
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 shape = SubResource("SphereShape3D_5ql3g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dykf5xbcmwrx7"]
+[gd_scene load_steps=13 format=3 uid="uid://dykf5xbcmwrx7"]
 
 [ext_resource type="Script" path="res://levels/level_script.gd" id="1_3phre"]
 [ext_resource type="PackedScene" uid="uid://brq6njohfogq4" path="res://assets/levelElements/Floor.tscn" id="1_486vs"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b8pktdq3p8gjw" path="res://assets/levelElements/WallPillar.tscn" id="3_3vdq6"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="4_1funl"]
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="6_15e35"]
+[ext_resource type="PackedScene" uid="uid://dvbed30uyt87n" path="res://assets/gameplay/corner_collider_ramp.tscn" id="7_m5fve"]
+[ext_resource type="PackedScene" uid="uid://ce8kxmiromtpc" path="res://assets/gameplay/Meadow.tscn" id="8_xukc3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h0w0h"]
 sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
@@ -110,136 +112,203 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 
 [node name="Meeples" type="Node" parent="."]
 
 [node name="Meeple" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45757, 0, -14.3635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9045, -1.90735e-06, -15.5735)
 
-[node name="Meeple2" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2287, 0, 12.365)
+[node name="Meeple2" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3585, -1.90735e-06, -16.6548)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple3" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.08122, 0, 13.7231)
+[node name="Meeple3" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.03233, -1.90735e-06, -11.9939)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple4" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54675, 0, -17.0713)
+[node name="Meeple4" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02597, -1.90735e-06, -6.91124)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple5" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.22442, 0, 9.6572)
+[node name="Meeple5" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9547, -1.90735e-06, -5.65208)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple6" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0855, 0, 11.0153)
+[node name="Meeple6" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8108, -3.8147e-06, -8.54205)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple7" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -15.6402, 0, -10.729)
+[node name="Meeple7" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26479, -3.8147e-06, -9.62333)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple8" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -4.34612, 0, 15.3925)
+[node name="Meeple8" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93858, -3.8147e-06, -4.96238)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple9" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, 12.7811, 0, 1.03146)
+[node name="Meeple9" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93222, -3.8147e-06, 0.120237)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple10" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -13.5747, 0, -14.5063)
+[node name="Meeple10" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.861, -3.8147e-06, 1.37939)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple11" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, -2.28063, 0, 11.6152)
+[node name="Meeple11" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1445, -7.62939e-06, 0.322858)
+area = NodePath("../Meeple/Area3D")
 
-[node name="Meeple12" parent="Meeples" instance=ExtResource("4_1funl")]
-transform = Transform3D(0.725819, 0, 0.687886, 0, 1, 0, -0.687886, 0, 0.725819, 14.8466, 0, -2.74581)
+[node name="Meeple12" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5985, -7.62939e-06, -0.758425)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple13" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, -16.7213, 0, -1.61185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27231, -7.62939e-06, 3.90252)
 area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple14" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, 4.05404, 0, 17.8374)
-area = NodePath("../Meeple2/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26594, -7.62939e-06, 8.98514)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple15" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, 14.0322, 0, -2.16291)
-area = NodePath("../Meeple3/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1947, -7.62939e-06, 10.2443)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple16" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, -16.8642, 0, -8.19695)
-area = NodePath("../Meeple4/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9372, -9.53674e-06, 7.59046)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple17" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, 3.91112, 0, 11.2524)
-area = NodePath("../Meeple5/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.39125, -9.53674e-06, 6.50918)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple18" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(0.391229, 0, 0.920293, 0, 1, 0, -0.920293, 0, 0.391229, 13.8893, 0, -8.74798)
-area = NodePath("../Meeple6/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06504, -9.53674e-06, 11.1701)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple19" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, -17.7514, 0, 10.1014)
-area = NodePath("../Meeple7/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05867, -9.53674e-06, 16.2527)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple20" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, 10.7066, 0, 9.927)
-area = NodePath("../Meeple8/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9874, -9.53674e-06, 17.5119)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple21" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, 4.19088, 0, -11.4535)
-area = NodePath("../Meeple9/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24396, -7.62939e-06, 2.8048)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple22" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, -20.4196, 0, 6.72272)
-area = NodePath("../Meeple10/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.697962, -7.62939e-06, 1.72352)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple23" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, 8.03844, 0, 6.54835)
-area = NodePath("../Meeple11/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62825, -7.62939e-06, 6.38447)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple24" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.349095, 0, 0.937087, 0, 1, 0, -0.937087, 0, -0.349095, 1.52277, 0, -14.8322)
-area = NodePath("../Meeple12/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63461, -7.62939e-06, 11.4671)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple25" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, -9.93927, 0, 11.5904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29416, -7.62939e-06, 12.7262)
 area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple26" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, 18.2888, 0, 7.9762)
-area = NodePath("../Meeple2/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28311, -5.72205e-06, 5.46483)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple27" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, 9.23576, 0, -12.4595)
-area = NodePath("../Meeple3/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82911, -5.72205e-06, 4.38355)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple28" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, -15.1048, 0, 7.50368)
-area = NodePath("../Meeple4/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1553, -5.72205e-06, 9.0445)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple29" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, 13.1233, 0, 3.88956)
-area = NodePath("../Meeple5/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16168, -5.72205e-06, 14.1271)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple30" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.459843, 0, 0.888, 0, 1, 0, -0.888, 0, -0.459843, 4.0702, 0, -16.5462)
-area = NodePath("../Meeple6/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23291, -5.72205e-06, 15.3863)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple31" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, -1.56957, 0, 19.8492)
-area = NodePath("../Meeple7/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.717, -5.72205e-06, 1.30135)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple32" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, 16.4328, 0, -2.19171)
-area = NodePath("../Meeple8/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.263, -5.72205e-06, 0.220066)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple33" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, -4.19563, 0, -10.7969)
-area = NodePath("../Meeple9/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5892, -5.72205e-06, 4.88102)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple34" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, -5.87362, 0, 19.752)
-area = NodePath("../Meeple10/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5956, -5.72205e-06, 9.96363)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple35" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, 12.1288, 0, -2.2889)
-area = NodePath("../Meeple11/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6668, -5.72205e-06, 11.2228)
+area = NodePath("../Meeple/Area3D")
 
 [node name="Meeple36" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
-transform = Transform3D(-0.944606, 0, 0.328207, 0, 1, 0, -0.328207, 0, -0.944606, -8.49965, 0, -10.8941)
-area = NodePath("../Meeple12/Area3D")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2442, -7.62939e-06, -9.84058)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple37" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7902, -7.62939e-06, -10.9219)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple38" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1164, -7.62939e-06, -6.26091)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple39" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1228, -7.62939e-06, -1.17829)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple40" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.194, -7.62939e-06, 0.0808659)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple41" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391326, -5.72205e-06, -13.7855)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple42" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93732, -5.72205e-06, -14.8668)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple43" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26353, -5.72205e-06, -10.2058)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple44" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2699, -5.72205e-06, -5.12321)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple45" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341123, -5.72205e-06, -3.86405)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple46" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45171, -7.62939e-06, -14.5222)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple47" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0942841, -7.62939e-06, -15.6035)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple48" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42049, -7.62939e-06, -10.9425)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple49" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42686, -7.62939e-06, -5.85993)
+area = NodePath("../Meeple/Area3D")
+
+[node name="Meeple50" parent="Meeples" node_paths=PackedStringArray("area") instance=ExtResource("4_1funl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50192, -7.62939e-06, -4.60077)
+area = NodePath("../Meeple/Area3D")
 
 [node name="CameraRoot" parent="." instance=ExtResource("6_15e35")]
 
@@ -294,3 +363,18 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51025, 7.10992, 6.41528)
 shape = SubResource("BoxShape3D_yhv8y")
+
+[node name="cornerColliderRamp" parent="." instance=ExtResource("7_m5fve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+
+[node name="cornerColliderRamp2" parent="." instance=ExtResource("7_m5fve")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 20)
+
+[node name="cornerColliderRamp3" parent="." instance=ExtResource("7_m5fve")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20, 0, 20)
+
+[node name="cornerColliderRamp4" parent="." instance=ExtResource("7_m5fve")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 20, 0, -20)
+
+[node name="meadow2" parent="." instance=ExtResource("8_xukc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.549844, 0)

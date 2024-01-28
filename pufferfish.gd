@@ -9,6 +9,7 @@ signal explode(happiness_amoung:float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	super._ready()
 	set_contact_monitor(true)
 	set_max_contacts_reported(10000)
 	body_entered.connect(_collide)

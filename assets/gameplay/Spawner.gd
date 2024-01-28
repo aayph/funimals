@@ -14,8 +14,7 @@ var spawnTimer: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	Gamestate.activate_spawner(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,7 +23,7 @@ func _process(delta):
 	if (spawnTimer > interval && spawns > 0):
 		spawnTimer -= interval
 		spawns -= 1
-		var enemyInstance: Node = enemy.instantiate()
+		var enemyInstance: Animal = enemy.instantiate()
 		enemyInstance.transform.origin = spawnOrigin
 		enemyInstance.set(
 			"linear_velocity",
@@ -35,6 +34,8 @@ func _process(delta):
 			)
 		)
 		spawnRoot.add_child(enemyInstance)
+		Gamestate.register_animal(enemyInstance)
 
 	if (spawns <= 0):
+		Gamestate.deactivate_spawner(self)
 		queue_free()

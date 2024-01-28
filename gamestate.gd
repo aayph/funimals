@@ -10,17 +10,17 @@ var MeepleList: Array[Meeple]
 var _total_happiness: float
 var current_state: StateChange = StateChange.MAIN_MENU
 var SpawnerCosts: Dictionary = {
-	"BasicSpawner": 100,
 	"PufferfishSpawner": 150,
 	"HamsterSpawner": 50,
 	"SquidSpawner": 80
 }
 var SpawnerDisplayNames: Dictionary = {
-	"BasicSpawner": "Test",
 	"PufferfishSpawner": "Pufferfish",
 	"HamsterSpawner": "Hamster",
 	"SquidSpawner": "Squid"
 }
+var animalList: Array[Animal]
+var activeSpawners: Array[Spawner]
 
 signal money_changed(money_added:float, total_money: float)
 signal total_happiness_changed(total_happiness:float)
@@ -85,3 +85,23 @@ func register_meeple(meeple: Meeple):
 	MeepleList.append(meeple)
 	_total_happiness += meeple.happiness
 	total_happiness_changed.emit(_total_happiness)
+
+func register_animal(animal: Animal):
+	animalList.append(animal)
+
+func unregister_animal(animal: Animal):
+	animalList.erase(animal)
+	if (animalList.size() == 0 && !can_build_spawner() && activeSpawners.size() == 0):
+		loose_level()
+
+func can_build_spawner() -> bool:
+	return SpawnerCosts.values().any(has_money)
+
+func has_money(amount: float) -> bool:
+	return amount <= Money
+
+func activate_spawner(spawner: Spawner):
+	activeSpawners.append(spawner)
+
+func deactivate_spawner(spawner: Spawner):
+	activeSpawners.erase(spawner)
