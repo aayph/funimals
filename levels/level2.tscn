@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj5qjrydyy4p2"]
+[gd_scene load_steps=15 format=3 uid="uid://cj5qjrydyy4p2"]
 
 [ext_resource type="PackedScene" uid="uid://odk5pljsuc76" path="res://assets/levelElements/Floor02.tscn" id="1_kuw04"]
 [ext_resource type="Script" path="res://levels/level_script.gd" id="1_nsnhp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8pktdq3p8gjw" path="res://assets/levelElements/WallPillar.tscn" id="4_ibsen"]
 [ext_resource type="PackedScene" uid="uid://cu8h24w36181" path="res://assets/camera_root.tscn" id="5_ggnkc"]
 [ext_resource type="PackedScene" uid="uid://s7ktxprbqvns" path="res://units/meeple.tscn" id="6_swwch"]
+[ext_resource type="PackedScene" uid="uid://bmxgrxxb50w7e" path="res://music/music_player.tscn" id="8_n1vvv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_asj27"]
 sky_top_color = Color(0.290196, 0.423529, 0.784314, 1)
@@ -419,3 +420,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112011, 0.0749722, -21.367
 [node name="CollisionShape3D" type="CollisionShape3D" parent="invisiblewalls/StaticBody3D8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0924072, 4.53032, 3.36212)
 shape = SubResource("BoxShape3D_k627m")
+
+[node name="MusicPlayer" parent="." instance=ExtResource("8_n1vvv")]

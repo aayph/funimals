@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmxgrxxb50w7e"]
+
+[ext_resource type="Script" path="res://music/music_controller.gd" id="1_ey77x"]
+[ext_resource type="AudioStream" uid="uid://4cg6puf3ukr6" path="res://music/FriendlyAnimals_Reduced_2.mp3" id="2_r8ypm"]
+[ext_resource type="AudioStream" uid="uid://bxk51htmg35jt" path="res://music/FriendlyAnimals_Reduced_1.mp3" id="3_nrebo"]
+[ext_resource type="AudioStream" uid="uid://cs157rgu6owh7" path="res://music/FriendlyAnimals_Main.mp3" id="4_bsgha"]
+
+[node name="MusicPlayer" type="Node" node_paths=PackedStringArray("stream_a", "stream_b", "stream_c")]
+script = ExtResource("1_ey77x")
+stream_a = NodePath("")
+stream_b = NodePath("")
+stream_c = NodePath("")
+
+[node name="Level1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r8ypm")
+autoplay = true
+
+[node name="Level2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nrebo")
+volume_db = -80.0
+autoplay = true
+
+[node name="Level3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bsgha")
+volume_db = -80.0
+autoplay = true
+
+[connection signal="finished" from="Level1" to="." method="_on_level_1_finished"]
